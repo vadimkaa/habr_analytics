@@ -1,6 +1,6 @@
-
-# Воспроизведение чисел статьи: тесты, пересчёт по приложенным метрикам и
-# побайтовая сверка результатов с тем, что лежит в репозитории.
+# Воспроизведение статьи: тесты, пересчёт и проверка результатов.
+# article.md сравнивается побайтово; численные JSON — с допуском,
+# учитывающим различия округления и границ бутстреп-интервалов.
 name: reproduce
 
 on:
@@ -21,6 +21,77 @@ jobs:
       - run: python -m ruff check .
       - run: python -m pytest
       - run: python run_analysis.py --metrics-only
-      - name: Числа статьи совпадают с репозиторием
-        # run_environment.json описывает машину прогона и меняется всегда.
-        run: git diff --exit-code -- data/results article.md ':(exclude)data/results/run_environment.json'
+      - name: Статья совпадает с репозиторием
+        run: git diff --exit-code -- article.md
+      - name: Расчётные JSON совпадают с заданной точностью
+        run: |
+          python - <<'PY'
+          import json
+          import math
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          root = Path("data/results")
+          tracked = {
+              Path(name)
+              for name in subprocess.check_output(
+                  ["git", "ls-files", "--", "data/results"], text=True
+              ).splitlines()
+              if name.endswith(".json") and not name.endswith("/run_environment.json")
+          }
+          produced = {
+              path for path in root.rglob("*.json")
+              if path.name != "run_environment.json"
+          }
+          errors = []
+          if tracked != produced:
+              errors.append(
+                  f"Набор JSON изменился: отсутствуют {sorted(map(str, tracked - produced))}; "
+                  f"добавлены {sorted(map(str, produced - tracked))}"
+              )
+
+          def compare(expected, actual, location):
+              if type(expected) is not type(actual):
+                  errors.append(f"{location}: изменился тип значения")
+              elif isinstance(expected, dict):
+                  if expected.keys() != actual.keys():
+                      errors.append(f"{location}: изменились ключи JSON")
+                  else:
+                      for key in expected:
+                          compare(expected[key], actual[key], f"{location}/{key}")
+              elif isinstance(expected, list):
+                  if len(expected) != len(actual):
+                      errors.append(f"{location}: изменилась длина массива")
+                  else:
+                      for i, (left, right) in enumerate(zip(expected, actual)):
+                          compare(left, right, f"{location}/{i}")
+              elif isinstance(expected, float):
+                  # Перевыборка авторов даёт небольшие расхождения границ ДИ
+                  # между средами даже при фиксированных входных данных.
+                  absolute_tolerance = 1e-3 if "ci95_author" in location else 1e-9
+                  if not math.isclose(
+                      expected, actual, rel_tol=1e-10, abs_tol=absolute_tolerance
+                  ):
+                      errors.append(
+                          f"{location}: сохранено {expected!r}, получено {actual!r}; "
+                          f"допуск {absolute_tolerance}"
+                      )
+              elif expected != actual:
+                  errors.append(f"{location}: значения различаются")
+
+          for path in sorted(tracked & produced):
+              saved = json.loads(subprocess.check_output(
+                  ["git", "show", f"HEAD:{path.as_posix()}"], text=True
+              ))
+              current = json.loads(path.read_text(encoding="utf-8"))
+              compare(saved, current, path.as_posix())
+
+          if errors:
+              print("\n".join(errors[:30]))
+              if len(errors) > 30:
+                  print(f"И ещё {len(errors) - 30} расхождений")
+              sys.exit(1)
+          print(f"Проверены {len(tracked)} JSON: структура и целые значения точны, "
+                "вещественные числа в пределах допусков")
+          PY
