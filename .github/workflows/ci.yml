@@ -1,0 +1,26 @@
+
+# Воспроизведение чисел статьи: тесты, пересчёт по приложенным метрикам и
+# побайтовая сверка результатов с тем, что лежит в репозитории.
+name: reproduce
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r requirements.txt
+      - run: python -m pip install -r experiments/catboost/requirements-catboost.txt
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python -m ruff check .
+      - run: python -m pytest
+      - run: python run_analysis.py --metrics-only
+      - name: Числа статьи совпадают с репозиторием
+        # run_environment.json описывает машину прогона и меняется всегда.
+        run: git diff --exit-code -- data/results article.md ':(exclude)data/results/run_environment.json'
