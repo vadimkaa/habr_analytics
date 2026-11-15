@@ -1,0 +1,2 @@
+# Только для сборки article.docx (13_build_docx.py); анализу не нужен.
+python-docx==1.2.0
