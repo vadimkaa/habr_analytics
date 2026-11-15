@@ -1,0 +1,22 @@
+{
+  "years": {
+    "2016": "https://xmlcalendar.ru/data/ru/2016/calendar.xml",
+    "2017": "https://xmlcalendar.ru/data/ru/2017/calendar.xml",
+    "2018": "https://xmlcalendar.ru/data/ru/2018/calendar.xml",
+    "2019": "https://xmlcalendar.ru/data/ru/2019/calendar.xml",
+    "2020": "https://xmlcalendar.ru/data/ru/2020/calendar.xml",
+    "2021": "https://xmlcalendar.ru/data/ru/2021/calendar.xml",
+    "2022": "https://xmlcalendar.ru/data/ru/2022/calendar.xml",
+    "2023": "https://xmlcalendar.ru/data/ru/2023/calendar.xml",
+    "2024": "https://xmlcalendar.ru/data/ru/2024/calendar.xml",
+    "2025": "https://xmlcalendar.ru/data/ru/2025/calendar.xml",
+    "2026": "https://xmlcalendar.ru/data/ru/2026/calendar.xml"
+  },
+  "t_encoding": {
+    "1": "нерабочий день (праздник, выходной, перенесённый выходной)",
+    "2": "рабочий день с особенностью (рабочая суббота/воскресенье или сокращённый предпраздничный)",
+    "''": "обычный день: пн-пт рабочие, сб/вс выходные"
+  },
+  "fetched_at": "2026-11-11",
+  "source": "xmlcalendar.ru - производственный календарь России (по постановлениям Правительства РФ о переносе выходных дней); перекрёстная проверка 2024-2025: kontur-extern.ru/proizvodstvennyj-kalendar"
+}

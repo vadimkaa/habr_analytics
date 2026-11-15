@@ -1,0 +1,485 @@
+{
+  "n": 1516,
+  "n_corp": 597,
+  "n_personal": 919,
+  "table": [
+    {
+      "metric": "oborneva",
+      "n": 1516,
+      "rho": 0.22069212784468364,
+      "p": 3.525368264221536e-18,
+      "ci95_author": [
+        0.15772959551748492,
+        0.29047652318550227
+      ],
+      "q_bh": 1.1457446858719992e-17
+    },
+    {
+      "metric": "flesch_web",
+      "n": 1516,
+      "rho": 0.222754965137052,
+      "p": 1.686473586424499e-18,
+      "ci95_author": [
+        0.1599237019668072,
+        0.2921889521062254
+      ],
+      "q_bh": 7.308052207839496e-18
+    },
+    {
+      "metric": "flesch_en",
+      "n": 1516,
+      "rho": 0.23339598210364132,
+      "p": 3.340449876439144e-20,
+      "ci95_author": [
+        0.17556431417633012,
+        0.2985263859711195
+      ],
+      "q_bh": 2.171292419685444e-19
+    },
+    {
+      "metric": "fk_mod",
+      "n": 1516,
+      "rho": -0.1785437085859721,
+      "p": 2.5170082308425905e-12,
+      "ci95_author": [
+        -0.25358150503558025,
+        -0.10629013470107634
+      ],
+      "q_bh": 4.674443857279097e-12
+    },
+    {
+      "metric": "oborneva_ru",
+      "n": 1516,
+      "rho": 0.21692660949618373,
+      "p": 1.3288672739065452e-17,
+      "ci95_author": [
+        0.15303273749467358,
+        0.2860441646262245
+      ],
+      "q_bh": 3.455054912157018e-17
+    },
+    {
+      "metric": "fk_mod_ru",
+      "n": 1516,
+      "rho": -0.1802059413793288,
+      "p": 1.56474833609508e-12,
+      "ci95_author": [
+        -0.25603914261268995,
+        -0.10841397661745102
+      ],
+      "q_bh": 3.3902880615393398e-12
+    },
+    {
+      "metric": "asl",
+      "n": 1516,
+      "rho": -0.056437869025957266,
+      "p": 0.027992244063876584,
+      "ci95_author": [
+        -0.13549743567108727,
+        0.020898634788450943
+      ],
+      "q_bh": 0.04043324142559951
+    },
+    {
+      "metric": "ttr_ru4",
+      "n": 1516,
+      "rho": -0.0488617729434379,
+      "p": 0.05716576004790888,
+      "ci95_author": [
+        -0.1343135141426471,
+        0.03958141850159941
+      ],
+      "q_bh": 0.07431548806228154
+    },
+    {
+      "metric": "mattr_ru4",
+      "n": 1516,
+      "rho": 0.035065853023107385,
+      "p": 0.1723750053711419,
+      "ci95_author": [
+        -0.04131987284408101,
+        0.11157364816604637
+      ],
+      "q_bh": 0.20371591543862222
+    },
+    {
+      "metric": "long_word_share",
+      "n": 1516,
+      "rho": -0.23819550595919994,
+      "p": 5.336144514999674e-21,
+      "ci95_author": [
+        -0.2988219882866856,
+        -0.18061775481980105
+      ],
+      "q_bh": 6.936987869499576e-20
+    },
+    {
+      "metric": "en_word_share",
+      "n": 1516,
+      "rho": 0.01674301261626307,
+      "p": 0.5147810350668691,
+      "ci95_author": [
+        -0.030824935010913802,
+        0.07264152606399867
+      ],
+      "q_bh": 0.5147810350668691
+    },
+    {
+      "metric": "code_char_share",
+      "n": 1516,
+      "rho": 0.028416416064753782,
+      "p": 0.26884434745494384,
+      "ci95_author": [
+        -0.03361360191845139,
+        0.09569181394678733
+      ],
+      "q_bh": 0.2912480430761892
+    },
+    {
+      "metric": "readingTime",
+      "n": 1495,
+      "rho": 0.11263865715154701,
+      "p": 1.2685800675822511e-05,
+      "ci95_author": [
+        0.021077662027345463,
+        0.1982117047093084
+      ],
+      "q_bh": 2.061442609821158e-05
+    }
+  ],
+  "agreement": {
+    "oborneva": {
+      "oborneva": 1.0,
+      "flesch_web": 0.9997613779811113,
+      "flesch_en": 0.9891100974056094,
+      "fk_mod": -0.9454983044983039,
+      "oborneva_ru": 0.981537827176428,
+      "fk_mod_ru": -0.9472526480154047
+    },
+    "flesch_web": {
+      "oborneva": 0.9997613779811113,
+      "flesch_web": 1.0,
+      "flesch_en": 0.9919499656642674,
+      "fk_mod": -0.9386482720293082,
+      "oborneva_ru": 0.9818886807255263,
+      "fk_mod_ru": -0.9410980508218438
+    },
+    "flesch_en": {
+      "oborneva": 0.9891100974056094,
+      "flesch_web": 0.9919499656642674,
+      "flesch_en": 1.0,
+      "fk_mod": -0.8891461044188229,
+      "oborneva_ru": 0.9747063105334437,
+      "fk_mod_ru": -0.8954982485306379
+    },
+    "fk_mod": {
+      "oborneva": -0.9454983044983039,
+      "flesch_web": -0.9386482720293082,
+      "flesch_en": -0.8891461044188229,
+      "fk_mod": 1.0,
+      "oborneva_ru": -0.9196350846178587,
+      "fk_mod_ru": 0.9903833531978365
+    },
+    "oborneva_ru": {
+      "oborneva": 0.981537827176428,
+      "flesch_web": 0.9818886807255263,
+      "flesch_en": 0.9747063105334437,
+      "fk_mod": -0.9196350846178587,
+      "oborneva_ru": 1.0,
+      "fk_mod_ru": -0.9424168901254663
+    },
+    "fk_mod_ru": {
+      "oborneva": -0.9472526480154047,
+      "flesch_web": -0.9410980508218438,
+      "flesch_en": -0.8954982485306379,
+      "fk_mod": 0.9903833531978365,
+      "oborneva_ru": -0.9424168901254663,
+      "fk_mod_ru": 1.0
+    }
+  },
+  "preprocessing_comparison": {
+    "original_full": [
+      {
+        "metric": "oborneva",
+        "n": 1516,
+        "rho_new": 0.22069212784468364,
+        "rho_old": 0.23924849823334454,
+        "delta": -0.018556370388660898
+      },
+      {
+        "metric": "flesch_web",
+        "n": 1516,
+        "rho_new": 0.222754965137052,
+        "rho_old": 0.24065298629208054,
+        "delta": -0.017898021155028532
+      },
+      {
+        "metric": "flesch_en",
+        "n": 1516,
+        "rho_new": 0.23339598210364132,
+        "rho_old": 0.24906823549907942,
+        "delta": -0.015672253395438096
+      },
+      {
+        "metric": "fk_mod",
+        "n": 1516,
+        "rho_new": -0.1785437085859721,
+        "rho_old": -0.20431881393439777,
+        "delta": 0.02577510534842567
+      },
+      {
+        "metric": "oborneva_ru",
+        "n": 1516,
+        "rho_new": 0.21692660949618373,
+        "rho_old": 0.2333346738644508,
+        "delta": -0.016408064368267083
+      },
+      {
+        "metric": "fk_mod_ru",
+        "n": 1516,
+        "rho_new": -0.1802059413793288,
+        "rho_old": -0.20488216218964844,
+        "delta": 0.024676220810319643
+      }
+    ],
+    "original_pre_only": [
+      {
+        "metric": "oborneva",
+        "n": 1516,
+        "rho_new": 0.22069212784468364,
+        "rho_old": 0.2416488239800235,
+        "delta": -0.020956696135339847
+      },
+      {
+        "metric": "flesch_web",
+        "n": 1516,
+        "rho_new": 0.222754965137052,
+        "rho_old": 0.24317742049242594,
+        "delta": -0.02042245535537393
+      },
+      {
+        "metric": "flesch_en",
+        "n": 1516,
+        "rho_new": 0.23339598210364132,
+        "rho_old": 0.2515521890580056,
+        "delta": -0.018156206954364262
+      },
+      {
+        "metric": "fk_mod",
+        "n": 1516,
+        "rho_new": -0.1785437085859721,
+        "rho_old": -0.20621469150077446,
+        "delta": 0.027670982914802356
+      },
+      {
+        "metric": "oborneva_ru",
+        "n": 1516,
+        "rho_new": 0.21692660949618373,
+        "rho_old": 0.2337327275398188,
+        "delta": -0.016806118043635077
+      },
+      {
+        "metric": "fk_mod_ru",
+        "n": 1516,
+        "rho_new": -0.1802059413793288,
+        "rho_old": -0.20664959458097606,
+        "delta": 0.026443653201647266
+      }
+    ]
+  },
+  "auc": {
+    "0.75": {
+      "threshold": 24.534359251821968,
+      "n_hit": 379,
+      "auc": 0.5929342365109311
+    },
+    "0.9": {
+      "threshold": 56.74799953350231,
+      "n_hit": 152,
+      "auc": 0.567062818336163
+    }
+  },
+  "deciles": [
+    {
+      "decile": 1,
+      "median": 6.457638288030726,
+      "size": 152
+    },
+    {
+      "decile": 2,
+      "median": 7.015606355608336,
+      "size": 152
+    },
+    {
+      "decile": 3,
+      "median": 10.061535573535688,
+      "size": 151
+    },
+    {
+      "decile": 4,
+      "median": 8.107619337619257,
+      "size": 152
+    },
+    {
+      "decile": 5,
+      "median": 11.769698204699406,
+      "size": 151
+    },
+    {
+      "decile": 6,
+      "median": 11.235364720883846,
+      "size": 152
+    },
+    {
+      "decile": 7,
+      "median": 12.178925390656856,
+      "size": 151
+    },
+    {
+      "decile": 8,
+      "median": 12.756419358172735,
+      "size": 152
+    },
+    {
+      "decile": 9,
+      "median": 16.347585131270897,
+      "size": 151
+    },
+    {
+      "decile": 10,
+      "median": 15.695568291842491,
+      "size": 152
+    }
+  ],
+  "adjusted": {
+    "n": 1516,
+    "partial_rank_correlation": 0.2000414890073068,
+    "controls": "corpus, publication month, corporate, 20 hub indicators, log words, log age",
+    "note": "descriptive residual Pearson correlation of ranks; no causal interpretation"
+  },
+  "adjusted_by_corpus": {
+    "oborneva": {
+      "ai": {
+        "n": 385,
+        "partial_rank_correlation": 0.3771384440610755,
+        "controls": "publication month, corporate, 20 hub indicators, log words, log age (within corpus)"
+      },
+      "wide": {
+        "n": 1131,
+        "partial_rank_correlation": 0.16392849764063105,
+        "controls": "publication month, corporate, 20 hub indicators, log words, log age (within corpus)"
+      }
+    },
+    "asl": {
+      "ai": {
+        "n": 385,
+        "partial_rank_correlation": -0.2106936094633606,
+        "controls": "publication month, corporate, 20 hub indicators, log words, log age (within corpus)"
+      },
+      "wide": {
+        "n": 1131,
+        "partial_rank_correlation": -0.03433228560938322,
+        "controls": "publication month, corporate, 20 hub indicators, log words, log age (within corpus)"
+      }
+    },
+    "long_word_share": {
+      "ai": {
+        "n": 385,
+        "partial_rank_correlation": -0.33585189536753296,
+        "controls": "publication month, corporate, 20 hub indicators, log words, log age (within corpus)"
+      },
+      "wide": {
+        "n": 1131,
+        "partial_rank_correlation": -0.15877555204470034,
+        "controls": "publication month, corporate, 20 hub indicators, log words, log age (within corpus)"
+      }
+    }
+  },
+  "percentile_metric": {
+    "all": 0.1874523182038977,
+    "by_corpus": {
+      "ai": 0.20304120425609826,
+      "wide": 0.16711869824412334
+    },
+    "definition": "Spearman rho of oborneva index with percentile of views within (corpus, month)"
+  },
+  "length": {
+    "rho_words_vpd": 0.09213556507375108,
+    "rho_words_vpd_partial_age_corp": 0.12533264499492935,
+    "quartiles": [
+      {
+        "quartile": 1,
+        "n": 379,
+        "words_median": 241.0,
+        "vpd_median": 11.312730933225488
+      },
+      {
+        "quartile": 2,
+        "n": 379,
+        "words_median": 760.0,
+        "vpd_median": 8.767123119111744
+      },
+      {
+        "quartile": 3,
+        "n": 380,
+        "words_median": 1429.0,
+        "vpd_median": 12.106271096592682
+      },
+      {
+        "quartile": 4,
+        "n": 378,
+        "words_median": 2618.5,
+        "vpd_median": 12.255770176177627
+      }
+    ],
+    "n_words_below_500": 413,
+    "rho_below_500": -0.1471045746220142,
+    "note": "texts below the 500-word MATTR window behave differently (mostly news notes); MATTR returns plain TTR for them"
+  },
+  "subgroups": {
+    "ai": {
+      "n": 385,
+      "rho": 0.3520332161361954,
+      "p": 1.1278831194746712e-12
+    },
+    "wide": {
+      "n": 1131,
+      "rho": 0.1999005149516638,
+      "p": 1.169964459118682e-11
+    }
+  },
+  "corp_subgroups": {
+    "False": {
+      "n": 919,
+      "rho": 0.18674503186649438,
+      "p": 1.1722021477519646e-08
+    },
+    "True": {
+      "n": 597,
+      "rho": 0.26468987211201345,
+      "p": 4.9868927429349e-11
+    }
+  },
+  "translations": {
+    "ai": {
+      "n": 385,
+      "n_translations": 55,
+      "share": 0.14285714285714285,
+      "rho_excl_translations": 0.3325922518697475,
+      "rho_translations_only": 0.268903318903319
+    },
+    "wide": {
+      "n": 1131,
+      "n_translations": 0,
+      "share": 0.0,
+      "rho_excl_translations": 0.1999005149516638,
+      "rho_translations_only": null
+    }
+  },
+  "words_reading_time": {
+    "n": 1470,
+    "rho": 0.9501853062159756,
+    "p": 0.0
+  },
+  "words_per_minute": 190.4
+}

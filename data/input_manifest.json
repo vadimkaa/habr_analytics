@@ -1,0 +1,17 @@
+{
+  "collection_reported": "2026-11-09 to 2026-11-10",
+  "per_record_observed_at": "not available in original archive",
+  "sha256": {
+    "habr_ai_ml_raw.jsonl.gz": "3d9f027ed9ed7233299b0ab1ef139f520ad7759283ec4619cb8ea0f1cd1c953d",
+    "habr_wide_raw.jsonl.gz": "3b0c0ae6a9f6e18a3127c72ccbafd43b054dccfa3ac60a2b62d6ec3b704ef4a6",
+    "lex_texts_raw.jsonl.gz": "b4e5fea8653000697fbad026d604457d52636154f9c8e318f8b6e5a68690dfcc",
+    "preprocessing_baseline_full.jsonl": "1855b7ae49333f7b6ebf4a135788fe63c1684e7a75e05b864533330c7d276fcf",
+    "preprocessing_baseline_pre_only.jsonl": "a5125e013f27c8d177359401ce57e6e8d63e8c236d60c796bcbb10c3a1297cdb",
+    "production_calendar_2016_2026.csv": "4f5051ede92ea3a5673658181f024fc46ca6d12044f0c0045fe582dacf4e4cc2"
+  },
+  "derived_sha256": {
+    "lex_metrics.jsonl": "a528961a8df2a2a6da9c987afd67f4f32f3c63c574bbc566f5cda5261ce2219f",
+    "image_counts.csv": "b7edd67a924ab0f43a0118fa570c02d797a1df18f89dbb49a035c10fd0c037de"
+  },
+  "frozen_for_article": "2026-11-11: исходный кэш и производные lex_metrics.jsonl пересобраны из неизменного lex_texts_raw.jsonl.gz (SHA-256 совпадает); изменения кода 06 — селектор img[data-tex] и колонка mattr_ru4. SHA-256 производных обновлён."
+}

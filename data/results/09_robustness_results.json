@@ -1,0 +1,509 @@
+{
+  "identity": {
+    "ai": 21389,
+    "wide": 29399,
+    "overlap": 3943,
+    "unique": 46845,
+    "sum": 50788
+  },
+  "corpora": {
+    "ai": {
+      "age_vpd_full": {
+        "n": 20650,
+        "rho": -0.4978779904214255,
+        "p": 0.0
+      },
+      "age_vpd_recent": {
+        "n": 6775,
+        "rho": -0.2357219775444223,
+        "p": 3.415933277033914e-86
+      },
+      "age_bands": [
+        {
+          "age_min": 30,
+          "age_max_exclusive": 90,
+          "n_weekend": 233,
+          "n_weekday": 1326,
+          "median_weekend": 34.41935021099053,
+          "median_weekday": 24.242896791329017,
+          "ratio": 1.4197705211244118,
+          "p_iid": 8.058138104879391e-06,
+          "rank_biserial": 0.18312521443044028
+        },
+        {
+          "age_min": 90,
+          "age_max_exclusive": 180,
+          "n_weekend": 276,
+          "n_weekday": 1711,
+          "median_weekend": 22.9019238500716,
+          "median_weekday": 13.944678607354952,
+          "ratio": 1.6423414619245695,
+          "p_iid": 1.0194080561148352e-09,
+          "rank_biserial": 0.2287457965932289
+        },
+        {
+          "age_min": 180,
+          "age_max_exclusive": 365,
+          "n_weekend": 549,
+          "n_weekday": 2652,
+          "median_weekend": 16.366464776579626,
+          "median_weekday": 12.675767192713373,
+          "ratio": 1.2911616731165463,
+          "p_iid": 7.655731373330171e-06,
+          "rank_biserial": 0.12115267852972766
+        }
+      ],
+      "cohort_rank_median_weekend": 0.5937989973544924,
+      "cohort_rank_median_weekday": 0.48354792560801146,
+      "adjusted_weekend": {
+        "coefficient_log10_target": 0.08958048400712329,
+        "ci95": [
+          0.04675032396690768,
+          0.1324106440473389
+        ],
+        "p_cluster_author": 4.1436617859789164e-05,
+        "ratio_target_plus1": 1.2290809403210181,
+        "ratio_ci95": [
+          1.1136541094245118,
+          1.3564714080218603
+        ],
+        "controls": "publication month, log age, corporate, dens24, 15 hub indicators",
+        "use_density": true,
+        "target": "log_views",
+        "n": 6775,
+        "warning": "conditional association; not intervention effect"
+      },
+      "adjusted_weekend_no_density": {
+        "coefficient_log10_target": 0.1118092160561707,
+        "ci95": [
+          0.07810434961402982,
+          0.14551408249831158
+        ],
+        "p_cluster_author": 7.936870582658118e-11,
+        "ratio_target_plus1": 1.2936274309100562,
+        "ratio_ci95": [
+          1.1970281113285683,
+          1.3980222470678523
+        ],
+        "controls": "publication month, log age, corporate, 15 hub indicators",
+        "use_density": false,
+        "target": "log_views",
+        "n": 6775,
+        "warning": "conditional association; not intervention effect"
+      },
+      "alternative_outcomes": {
+        "comments": {
+          "coefficient_log10_target": 0.10969931318187996,
+          "ci95": [
+            0.05884757380252161,
+            0.1605510525612383
+          ],
+          "p_cluster_author": 2.356634994968175e-05,
+          "ratio_target_plus1": 1.2873579318127581,
+          "ratio_ci95": [
+            1.1451109663996961,
+            1.4472749744174154
+          ],
+          "controls": "publication month, log age, corporate, dens24, 15 hub indicators",
+          "use_density": true,
+          "target": "log_comments",
+          "n": 6775,
+          "warning": "conditional association; not intervention effect"
+        },
+        "favorites": {
+          "coefficient_log10_target": 0.07518855027136055,
+          "ci95": [
+            0.04109551647012093,
+            0.10928158407260018
+          ],
+          "p_cluster_author": 1.542769926015514e-05,
+          "ratio_target_plus1": 1.1890183313229274,
+          "ratio_ci95": [
+            1.099247575644403,
+            1.2861202731269876
+          ],
+          "controls": "publication month, log age, corporate, dens24, 15 hub indicators",
+          "use_density": true,
+          "target": "log_favorites",
+          "n": 6775,
+          "warning": "conditional association; not intervention effect"
+        },
+        "score": {
+          "n_weekend": 1068,
+          "n_weekday": 5707,
+          "median_weekend": 7.0,
+          "median_weekday": 7.0,
+          "share_ge10_weekend": 0.40262172284644193,
+          "share_ge10_weekday": 0.3993341510425793,
+          "p_iid": 0.8433484167775118,
+          "rank_biserial": 0.0037979838151320777,
+          "median_diff_ci_author": [
+            -1.0,
+            1.0
+          ]
+        }
+      },
+      "author_slot": {
+        "definition": "article groups by leave-one-out median log VPD of the author's other articles in the window (>= 3 articles); groups are made of articles, so one author can appear in several groups; slot = weekend/weekday; medians of accumulated views; descriptive slice, no contribution decomposition",
+        "min_articles": 3,
+        "n_authors": 566,
+        "n_authors_spanning_groups": 216,
+        "cells": [
+          {
+            "tercile": 0,
+            "tercile_label": "нижняя",
+            "weekend": false,
+            "n_articles": 1102,
+            "n_authors": 283,
+            "views_median": 1460.0,
+            "views_ci95_author": [
+              1303.0,
+              1608.0125
+            ]
+          },
+          {
+            "tercile": 0,
+            "tercile_label": "нижняя",
+            "weekend": true,
+            "n_articles": 204,
+            "n_authors": 101,
+            "views_median": 2109.5,
+            "views_ci95_author": [
+              1652.0,
+              2344.0875
+            ]
+          },
+          {
+            "tercile": 1,
+            "tercile_label": "средняя",
+            "weekend": false,
+            "n_articles": 1141,
+            "n_authors": 250,
+            "views_median": 2422.0,
+            "views_ci95_author": [
+              1920.825,
+              3227.7374999999997
+            ]
+          },
+          {
+            "tercile": 1,
+            "tercile_label": "средняя",
+            "weekend": true,
+            "n_articles": 201,
+            "n_authors": 99,
+            "views_median": 4315.0,
+            "views_ci95_author": [
+              3100.0,
+              5386.0
+            ]
+          },
+          {
+            "tercile": 2,
+            "tercile_label": "верхняя",
+            "weekend": false,
+            "n_articles": 1021,
+            "n_authors": 229,
+            "views_median": 4605.0,
+            "views_ci95_author": [
+              3857.475,
+              5478.174999999999
+            ]
+          },
+          {
+            "tercile": 2,
+            "tercile_label": "верхняя",
+            "weekend": true,
+            "n_articles": 242,
+            "n_authors": 103,
+            "views_median": 5592.0,
+            "views_ci95_author": [
+              4403.0,
+              6947.287499999998
+            ]
+          }
+        ],
+        "ratios": {
+          "weekend_vs_weekday": {
+            "нижняя": 1.4448630136986302,
+            "средняя": 1.781585466556565,
+            "верхняя": 1.2143322475570033
+          },
+          "strong_vs_weak_weekday": 3.154109589041096
+        },
+        "variance_shares": {
+          "weekend_over_age": 0.010977372975849331,
+          "author_loo_over_age": 0.17592062658367158
+        }
+      },
+      "views_dispersion": {
+        "age_bands": "30–89, 90–179, 180–364 days; quantile ratios within band, median across bands",
+        "p75_p25_quantile_ratio": 4.093439363817097,
+        "p90_p10_quantile_ratio": 18.030419880034277,
+        "weekend_share_above_weekday_median": 0.6086956521739131,
+        "n": 6747,
+        "warning": "descriptive spread of already published articles; not a decomposition of contributions"
+      },
+      "translations_weekend": {
+        "available": true,
+        "share_total": 0.09166051660516605,
+        "n_translations": 621,
+        "share_by_slot": {
+          "weekday": {
+            "share": 0.08831259856316805,
+            "n": 5707
+          },
+          "weekend": {
+            "share": 0.10955056179775281,
+            "n": 1068
+          }
+        },
+        "weekend_ratio_excl_translations": 1.3439400402176358,
+        "weekend_ratio_all": 1.4084331855467902,
+        "cohort_rank_weekend_excl": 0.5701078582434514,
+        "cohort_rank_weekday_excl": 0.47493403693931396,
+        "weekend_ratio_translations_only": 1.4129851469941863
+      }
+    },
+    "wide": {
+      "age_vpd_full": {
+        "n": 27662,
+        "rho": -0.2973977063600421,
+        "p": 0.0
+      },
+      "age_vpd_recent": {
+        "n": 16577,
+        "rho": -0.25541092048701486,
+        "p": 3.820287561328151e-245
+      },
+      "age_bands": [
+        {
+          "age_min": 30,
+          "age_max_exclusive": 90,
+          "n_weekend": 472,
+          "n_weekday": 2627,
+          "median_weekend": 44.270148834974435,
+          "median_weekday": 24.70042744858755,
+          "ratio": 1.7922827014682268,
+          "p_iid": 2.2820936395027804e-23,
+          "rank_biserial": 0.28752588826592174
+        },
+        {
+          "age_min": 90,
+          "age_max_exclusive": 180,
+          "n_weekend": 688,
+          "n_weekday": 3717,
+          "median_weekend": 24.926676410362234,
+          "median_weekday": 15.288894767557775,
+          "ratio": 1.6303779173923887,
+          "p_iid": 2.430077639343615e-21,
+          "rank_biserial": 0.2272986779786148
+        },
+        {
+          "age_min": 180,
+          "age_max_exclusive": 365,
+          "n_weekend": 1575,
+          "n_weekday": 7408,
+          "median_weekend": 15.87241149999762,
+          "median_weekday": 12.059957508159812,
+          "ratio": 1.3161249937454826,
+          "p_iid": 1.3637328132973332e-18,
+          "rank_biserial": 0.14098872090232772
+        }
+      ],
+      "cohort_rank_median_weekend": 0.6025719534598898,
+      "cohort_rank_median_weekday": 0.47896074830488977,
+      "adjusted_weekend": {
+        "coefficient_log10_target": 0.10259587142621153,
+        "ci95": [
+          0.06347380448334933,
+          0.14171793836907373
+        ],
+        "p_cluster_author": 2.748585082532829e-07,
+        "ratio_target_plus1": 1.2664728132090912,
+        "ratio_ci95": [
+          1.1573742201759232,
+          1.3858554637185072
+        ],
+        "controls": "publication month, log age, corporate, dens24, 15 hub indicators",
+        "use_density": true,
+        "target": "log_views",
+        "n": 16577,
+        "warning": "conditional association; not intervention effect"
+      },
+      "adjusted_weekend_no_density": {
+        "coefficient_log10_target": 0.1353917959267159,
+        "ci95": [
+          0.1005677193391466,
+          0.17021587251428522
+        ],
+        "p_cluster_author": 2.5347375199593074e-14,
+        "ratio_target_plus1": 1.3658147418004685,
+        "ratio_ci95": [
+          1.2605721830121073,
+          1.4798437836872078
+        ],
+        "controls": "publication month, log age, corporate, 15 hub indicators",
+        "use_density": false,
+        "target": "log_views",
+        "n": 16577,
+        "warning": "conditional association; not intervention effect"
+      },
+      "alternative_outcomes": {
+        "comments": {
+          "coefficient_log10_target": 0.08770583792408393,
+          "ci95": [
+            0.04561611164261127,
+            0.1297955642055566
+          ],
+          "p_cluster_author": 4.424058523554845e-05,
+          "ratio_target_plus1": 1.2237870068941124,
+          "ratio_ci95": [
+            1.1107494622135765,
+            1.348328033630755
+          ],
+          "controls": "publication month, log age, corporate, dens24, 15 hub indicators",
+          "use_density": true,
+          "target": "log_comments",
+          "n": 16577,
+          "warning": "conditional association; not intervention effect"
+        },
+        "favorites": {
+          "coefficient_log10_target": 0.12176805201301343,
+          "ci95": [
+            0.08095615453069765,
+            0.1625799494953292
+          ],
+          "p_cluster_author": 4.980302224464262e-09,
+          "ratio_target_plus1": 1.3236344197426728,
+          "ratio_ci95": [
+            1.2049142885858581,
+            1.4540520381609534
+          ],
+          "controls": "publication month, log age, corporate, dens24, 15 hub indicators",
+          "use_density": true,
+          "target": "log_favorites",
+          "n": 16577,
+          "warning": "conditional association; not intervention effect"
+        },
+        "score": {
+          "n_weekend": 2763,
+          "n_weekday": 13814,
+          "median_weekend": 7.0,
+          "median_weekday": 7.0,
+          "share_ge10_weekend": 0.40933767643865365,
+          "share_ge10_weekday": 0.3626755465469813,
+          "p_iid": 2.2141419047274125e-06,
+          "rank_biserial": 0.0568763188048067,
+          "median_diff_ci_author": [
+            -1.0,
+            2.0
+          ]
+        }
+      },
+      "author_slot": {
+        "definition": "article groups by leave-one-out median log VPD of the author's other articles in the window (>= 3 articles); groups are made of articles, so one author can appear in several groups; slot = weekend/weekday; medians of accumulated views; descriptive slice, no contribution decomposition",
+        "min_articles": 3,
+        "n_authors": 989,
+        "n_authors_spanning_groups": 308,
+        "cells": [
+          {
+            "tercile": 0,
+            "tercile_label": "нижняя",
+            "weekend": false,
+            "n_articles": 3692,
+            "n_authors": 441,
+            "views_median": 1277.0,
+            "views_ci95_author": [
+              1063.9875,
+              1508.1
+            ]
+          },
+          {
+            "tercile": 0,
+            "tercile_label": "нижняя",
+            "weekend": true,
+            "n_articles": 517,
+            "n_authors": 160,
+            "views_median": 2168.0,
+            "views_ci95_author": [
+              1737.0,
+              2878.0
+            ]
+          },
+          {
+            "tercile": 1,
+            "tercile_label": "средняя",
+            "weekend": false,
+            "n_articles": 3447,
+            "n_authors": 398,
+            "views_median": 2480.0,
+            "views_ci95_author": [
+              2188.5,
+              2847.0
+            ]
+          },
+          {
+            "tercile": 1,
+            "tercile_label": "средняя",
+            "weekend": true,
+            "n_articles": 721,
+            "n_authors": 175,
+            "views_median": 3069.0,
+            "views_ci95_author": [
+              2743.875,
+              3722.0375
+            ]
+          },
+          {
+            "tercile": 2,
+            "tercile_label": "верхняя",
+            "weekend": false,
+            "n_articles": 3290,
+            "n_authors": 416,
+            "views_median": 5194.5,
+            "views_ci95_author": [
+              4713.9625,
+              5569.05
+            ]
+          },
+          {
+            "tercile": 2,
+            "tercile_label": "верхняя",
+            "weekend": true,
+            "n_articles": 844,
+            "n_authors": 216,
+            "views_median": 6665.5,
+            "views_ci95_author": [
+              5808.875,
+              7276.1125
+            ]
+          }
+        ],
+        "ratios": {
+          "weekend_vs_weekday": {
+            "нижняя": 1.6977290524667188,
+            "средняя": 1.2375,
+            "верхняя": 1.2831841370680528
+          },
+          "strong_vs_weak_weekday": 4.067736883320282
+        },
+        "variance_shares": {
+          "weekend_over_age": 0.01660996871539433,
+          "author_loo_over_age": 0.2624168584632599
+        }
+      },
+      "views_dispersion": {
+        "age_bands": "30–89, 90–179, 180–364 days; quantile ratios within band, median across bands",
+        "p75_p25_quantile_ratio": 4.978494623655914,
+        "p90_p10_quantile_ratio": 18.466498740554176,
+        "weekend_share_above_weekday_median": 0.6285191956124314,
+        "n": 16487,
+        "warning": "descriptive spread of already published articles; not a decomposition of contributions"
+      },
+      "translations_weekend": {
+        "available": false,
+        "reason": "is_translation отсутствует в замороженной выгрузке широкого корпуса"
+      }
+    }
+  }
+}

@@ -1,0 +1,1063 @@
+{
+  "corpora": {
+    "ai": {
+      "text_sample_quartile_check": {
+        "mature_population_pct": [
+          25.898305,
+          25.883777,
+          25.656174,
+          22.561743
+        ],
+        "mature_text_sample_pct": [
+          25.974026,
+          25.974026,
+          25.454545,
+          22.597403
+        ],
+        "n_text_sample": 385,
+        "definition": "VPD quartiles from entire original corpus including young articles"
+      },
+      "regression": {
+        "baseline": {
+          "n": 6775,
+          "ratio_views_plus1": 1.229081,
+          "ci95_cluster_author": [
+            1.113654,
+            1.356471
+          ],
+          "calendar_controls": "month",
+          "age_controls": "log",
+          "interpretation": "conditional association, not a causal effect"
+        },
+        "quarter_calendar": {
+          "n": 6775,
+          "ratio_views_plus1": 1.229001,
+          "ci95_cluster_author": [
+            1.113744,
+            1.356185
+          ],
+          "calendar_controls": "quarter",
+          "age_controls": "log",
+          "interpretation": "conditional association, not a causal effect"
+        },
+        "age_bands": {
+          "n": 6775,
+          "ratio_views_plus1": 1.218084,
+          "ci95_cluster_author": [
+            1.104259,
+            1.343641
+          ],
+          "calendar_controls": "month",
+          "age_controls": "bands",
+          "interpretation": "conditional association, not a causal effect"
+        }
+      },
+      "age_comparison": {
+        "median_weekend": 190.857862,
+        "median_weekday": 168.380224,
+        "iqr_weekend": [
+          99.837078,
+          261.546424
+        ],
+        "iqr_weekday": [
+          95.149801,
+          245.377567
+        ]
+      },
+      "holidays": {
+        "n_episodes": 68,
+        "n_holiday_articles": 468,
+        "n_control_articles": 4017,
+        "difference_pp": 9.67407,
+        "leave_one_episode_out": [
+          {
+            "episode_start": "2016-01-04",
+            "episode_end": "2016-01-08",
+            "n_articles_removed": 4,
+            "difference_pp_without_episode": 9.67407
+          },
+          {
+            "episode_start": "2016-02-22",
+            "episode_end": "2016-02-23",
+            "n_articles_removed": 2,
+            "difference_pp_without_episode": 9.67407
+          },
+          {
+            "episode_start": "2016-03-07",
+            "episode_end": "2016-03-08",
+            "n_articles_removed": 4,
+            "difference_pp_without_episode": 9.817748
+          },
+          {
+            "episode_start": "2016-05-02",
+            "episode_end": "2016-05-03",
+            "n_articles_removed": 4,
+            "difference_pp_without_episode": 9.817748
+          },
+          {
+            "episode_start": "2016-06-13",
+            "episode_end": "2016-06-13",
+            "n_articles_removed": 2,
+            "difference_pp_without_episode": 9.817748
+          },
+          {
+            "episode_start": "2017-01-02",
+            "episode_end": "2017-01-06",
+            "n_articles_removed": 3,
+            "difference_pp_without_episode": 9.615385
+          },
+          {
+            "episode_start": "2017-02-23",
+            "episode_end": "2017-02-24",
+            "n_articles_removed": 1,
+            "difference_pp_without_episode": 9.615385
+          },
+          {
+            "episode_start": "2017-03-08",
+            "episode_end": "2017-03-08",
+            "n_articles_removed": 3,
+            "difference_pp_without_episode": 9.615385
+          },
+          {
+            "episode_start": "2017-05-01",
+            "episode_end": "2017-05-01",
+            "n_articles_removed": 1,
+            "difference_pp_without_episode": 9.615385
+          },
+          {
+            "episode_start": "2017-05-08",
+            "episode_end": "2017-05-09",
+            "n_articles_removed": 1,
+            "difference_pp_without_episode": 9.615385
+          },
+          {
+            "episode_start": "2017-06-12",
+            "episode_end": "2017-06-12",
+            "n_articles_removed": 2,
+            "difference_pp_without_episode": 9.817748
+          },
+          {
+            "episode_start": "2017-11-06",
+            "episode_end": "2017-11-06",
+            "n_articles_removed": 3,
+            "difference_pp_without_episode": 9.902741
+          },
+          {
+            "episode_start": "2018-01-01",
+            "episode_end": "2018-01-08",
+            "n_articles_removed": 2,
+            "difference_pp_without_episode": 9.67407
+          },
+          {
+            "episode_start": "2018-02-23",
+            "episode_end": "2018-02-23",
+            "n_articles_removed": 2,
+            "difference_pp_without_episode": 9.67407
+          },
+          {
+            "episode_start": "2018-03-08",
+            "episode_end": "2018-03-09",
+            "n_articles_removed": 2,
+            "difference_pp_without_episode": 9.67407
+          },
+          {
+            "episode_start": "2018-04-30",
+            "episode_end": "2018-05-02",
+            "n_articles_removed": 3,
+            "difference_pp_without_episode": 9.732756
+          },
+          {
+            "episode_start": "2018-05-09",
+            "episode_end": "2018-05-09",
+            "n_articles_removed": 2,
+            "difference_pp_without_episode": 9.553196
+          },
+          {
+            "episode_start": "2018-06-11",
+            "episode_end": "2018-06-12",
+            "n_articles_removed": 2,
+            "difference_pp_without_episode": 9.553196
+          },
+          {
+            "episode_start": "2018-11-05",
+            "episode_end": "2018-11-05",
+            "n_articles_removed": 2,
+            "difference_pp_without_episode": 9.67407
+          },
+          {
+            "episode_start": "2018-12-31",
+            "episode_end": "2019-01-08",
+            "n_articles_removed": 5,
+            "difference_pp_without_episode": 10.29106
+          },
+          {
+            "episode_start": "2019-03-08",
+            "episode_end": "2019-03-08",
+            "n_articles_removed": 1,
+            "difference_pp_without_episode": 9.732756
+          },
+          {
+            "episode_start": "2019-05-01",
+            "episode_end": "2019-05-03",
+            "n_articles_removed": 4,
+            "difference_pp_without_episode": 9.67407
+          },
+          {
+            "episode_start": "2019-05-09",
+            "episode_end": "2019-05-10",
+            "n_articles_removed": 1,
+            "difference_pp_without_episode": 9.615385
+          },
+          {
+            "episode_start": "2019-11-04",
+            "episode_end": "2019-11-04",
+            "n_articles_removed": 1,
+            "difference_pp_without_episode": 9.615385
+          },
+          {
+            "episode_start": "2020-01-01",
+            "episode_end": "2020-01-08",
+            "n_articles_removed": 13,
+            "difference_pp_without_episode": 9.732756
+          },
+          {
+            "episode_start": "2020-02-24",
+            "episode_end": "2020-02-24",
+            "n_articles_removed": 1,
+            "difference_pp_without_episode": 9.615385
+          },
+          {
+            "episode_start": "2020-03-09",
+            "episode_end": "2020-03-09",
+            "n_articles_removed": 2,
+            "difference_pp_without_episode": 9.67407
+          },
+          {
+            "episode_start": "2020-05-01",
+            "episode_end": "2020-05-05",
+            "n_articles_removed": 11,
+            "difference_pp_without_episode": 10.29106
+          },
+          {
+            "episode_start": "2020-05-11",
+            "episode_end": "2020-05-11",
+            "n_articles_removed": 3,
+            "difference_pp_without_episode": 9.615385
+          },
+          {
+            "episode_start": "2020-11-04",
+            "episode_end": "2020-11-04",
+            "n_articles_removed": 2,
+            "difference_pp_without_episode": 9.67407
+          },
+          {
+            "episode_start": "2021-01-01",
+            "episode_end": "2021-01-08",
+            "n_articles_removed": 8,
+            "difference_pp_without_episode": 9.817748
+          },
+          {
+            "episode_start": "2021-02-22",
+            "episode_end": "2021-02-23",
+            "n_articles_removed": 6,
+            "difference_pp_without_episode": 9.553196
+          },
+          {
+            "episode_start": "2021-03-08",
+            "episode_end": "2021-03-08",
+            "n_articles_removed": 1,
+            "difference_pp_without_episode": 9.732756
+          },
+          {
+            "episode_start": "2021-05-03",
+            "episode_end": "2021-05-03",
+            "n_articles_removed": 1,
+            "difference_pp_without_episode": 9.732756
+          },
+          {
+            "episode_start": "2021-06-14",
+            "episode_end": "2021-06-14",
+            "n_articles_removed": 3,
+            "difference_pp_without_episode": 9.902741
+          },
+          {
+            "episode_start": "2021-11-04",
+            "episode_end": "2021-11-05",
+            "n_articles_removed": 5,
+            "difference_pp_without_episode": 9.732756
+          },
+          {
+            "episode_start": "2021-12-31",
+            "episode_end": "2022-01-07",
+            "n_articles_removed": 5,
+            "difference_pp_without_episode": 9.491007
+          },
+          {
+            "episode_start": "2022-02-23",
+            "episode_end": "2022-02-23",
+            "n_articles_removed": 3,
+            "difference_pp_without_episode": 9.615385
+          },
+          {
+            "episode_start": "2022-03-07",
+            "episode_end": "2022-03-08",
+            "n_articles_removed": 2,
+            "difference_pp_without_episode": 9.67407
+          },
+          {
+            "episode_start": "2022-05-02",
+            "episode_end": "2022-05-03",
+            "n_articles_removed": 3,
+            "difference_pp_without_episode": 9.615385
+          },
+          {
+            "episode_start": "2022-05-09",
+            "episode_end": "2022-05-10",
+            "n_articles_removed": 2,
+            "difference_pp_without_episode": 9.817748
+          },
+          {
+            "episode_start": "2022-06-13",
+            "episode_end": "2022-06-13",
+            "n_articles_removed": 2,
+            "difference_pp_without_episode": 9.817748
+          },
+          {
+            "episode_start": "2022-11-04",
+            "episode_end": "2022-11-04",
+            "n_articles_removed": 2,
+            "difference_pp_without_episode": 9.817748
+          },
+          {
+            "episode_start": "2023-01-02",
+            "episode_end": "2023-01-06",
+            "n_articles_removed": 17,
+            "difference_pp_without_episode": 9.615385
+          },
+          {
+            "episode_start": "2023-02-23",
+            "episode_end": "2023-02-24",
+            "n_articles_removed": 5,
+            "difference_pp_without_episode": 10.29106
+          },
+          {
+            "episode_start": "2023-03-08",
+            "episode_end": "2023-03-08",
+            "n_articles_removed": 3,
+            "difference_pp_without_episode": 9.902741
+          },
+          {
+            "episode_start": "2023-05-01",
+            "episode_end": "2023-05-01",
+            "n_articles_removed": 3,
+            "difference_pp_without_episode": 9.491007
+          },
+          {
+            "episode_start": "2023-05-08",
+            "episode_end": "2023-05-09",
+            "n_articles_removed": 3,
+            "difference_pp_without_episode": 9.491007
+          },
+          {
+            "episode_start": "2023-06-12",
+            "episode_end": "2023-06-12",
+            "n_articles_removed": 7,
+            "difference_pp_without_episode": 9.615385
+          },
+          {
+            "episode_start": "2023-11-06",
+            "episode_end": "2023-11-06",
+            "n_articles_removed": 3,
+            "difference_pp_without_episode": 9.902741
+          },
+          {
+            "episode_start": "2024-01-01",
+            "episode_end": "2024-01-08",
+            "n_articles_removed": 16,
+            "difference_pp_without_episode": 9.206692
+          },
+          {
+            "episode_start": "2024-02-23",
+            "episode_end": "2024-02-23",
+            "n_articles_removed": 3,
+            "difference_pp_without_episode": 9.902741
+          },
+          {
+            "episode_start": "2024-03-08",
+            "episode_end": "2024-03-08",
+            "n_articles_removed": 1,
+            "difference_pp_without_episode": 9.615385
+          },
+          {
+            "episode_start": "2024-04-29",
+            "episode_end": "2024-05-01",
+            "n_articles_removed": 11,
+            "difference_pp_without_episode": 9.615385
+          },
+          {
+            "episode_start": "2024-05-09",
+            "episode_end": "2024-05-10",
+            "n_articles_removed": 9,
+            "difference_pp_without_episode": 9.370287
+          },
+          {
+            "episode_start": "2024-06-12",
+            "episode_end": "2024-06-12",
+            "n_articles_removed": 2,
+            "difference_pp_without_episode": 9.553196
+          },
+          {
+            "episode_start": "2024-11-04",
+            "episode_end": "2024-11-04",
+            "n_articles_removed": 4,
+            "difference_pp_without_episode": 9.817748
+          },
+          {
+            "episode_start": "2024-12-30",
+            "episode_end": "2025-01-08",
+            "n_articles_removed": 31,
+            "difference_pp_without_episode": 9.370287
+          },
+          {
+            "episode_start": "2025-05-01",
+            "episode_end": "2025-05-02",
+            "n_articles_removed": 20,
+            "difference_pp_without_episode": 9.817748
+          },
+          {
+            "episode_start": "2025-05-08",
+            "episode_end": "2025-05-09",
+            "n_articles_removed": 10,
+            "difference_pp_without_episode": 9.553196
+          },
+          {
+            "episode_start": "2025-06-12",
+            "episode_end": "2025-06-13",
+            "n_articles_removed": 21,
+            "difference_pp_without_episode": 9.491007
+          },
+          {
+            "episode_start": "2025-11-03",
+            "episode_end": "2025-11-04",
+            "n_articles_removed": 18,
+            "difference_pp_without_episode": 9.67407
+          },
+          {
+            "episode_start": "2025-12-31",
+            "episode_end": "2026-01-09",
+            "n_articles_removed": 73,
+            "difference_pp_without_episode": 9.615385
+          },
+          {
+            "episode_start": "2026-02-23",
+            "episode_end": "2026-02-23",
+            "n_articles_removed": 13,
+            "difference_pp_without_episode": 9.732756
+          },
+          {
+            "episode_start": "2026-03-09",
+            "episode_end": "2026-03-09",
+            "n_articles_removed": 14,
+            "difference_pp_without_episode": 9.430647
+          },
+          {
+            "episode_start": "2026-05-01",
+            "episode_end": "2026-05-01",
+            "n_articles_removed": 15,
+            "difference_pp_without_episode": 9.732756
+          },
+          {
+            "episode_start": "2026-05-11",
+            "episode_end": "2026-05-11",
+            "n_articles_removed": 19,
+            "difference_pp_without_episode": 10.37296
+          },
+          {
+            "episode_start": "2026-06-12",
+            "episode_end": "2026-06-12",
+            "n_articles_removed": 15,
+            "difference_pp_without_episode": 9.491007
+          }
+        ],
+        "loo_min_pp": 9.206692,
+        "loo_max_pp": 10.37296,
+        "episode_local_comparisons": [
+          {
+            "episode_start": "2016-01-04",
+            "n_articles": 4,
+            "n_matched_controls": 21,
+            "difference_pp_vs_local_controls": -10.344828
+          },
+          {
+            "episode_start": "2016-02-22",
+            "n_articles": 2,
+            "n_matched_controls": 13,
+            "difference_pp_vs_local_controls": 11.842105
+          },
+          {
+            "episode_start": "2016-03-07",
+            "n_articles": 4,
+            "n_matched_controls": 10,
+            "difference_pp_vs_local_controls": -15.065789
+          },
+          {
+            "episode_start": "2016-05-02",
+            "n_articles": 4,
+            "n_matched_controls": 14,
+            "difference_pp_vs_local_controls": 10.555556
+          },
+          {
+            "episode_start": "2016-06-13",
+            "n_articles": 2,
+            "n_matched_controls": 10,
+            "difference_pp_vs_local_controls": -26.041667
+          },
+          {
+            "episode_start": "2017-01-02",
+            "n_articles": 3,
+            "n_matched_controls": 64,
+            "difference_pp_vs_local_controls": 46.876457
+          },
+          {
+            "episode_start": "2017-02-23",
+            "n_articles": 1,
+            "n_matched_controls": 27,
+            "difference_pp_vs_local_controls": 17.508181
+          },
+          {
+            "episode_start": "2017-03-08",
+            "n_articles": 3,
+            "n_matched_controls": 19,
+            "difference_pp_vs_local_controls": 31.813932
+          },
+          {
+            "episode_start": "2017-05-01",
+            "n_articles": 1,
+            "n_matched_controls": 16,
+            "difference_pp_vs_local_controls": 39.68254
+          },
+          {
+            "episode_start": "2017-05-08",
+            "n_articles": 1,
+            "n_matched_controls": 32,
+            "difference_pp_vs_local_controls": 19.047619
+          },
+          {
+            "episode_start": "2017-06-12",
+            "n_articles": 2,
+            "n_matched_controls": 17,
+            "difference_pp_vs_local_controls": -4.365079
+          },
+          {
+            "episode_start": "2017-11-06",
+            "n_articles": 3,
+            "n_matched_controls": 18,
+            "difference_pp_vs_local_controls": -23.015873
+          },
+          {
+            "episode_start": "2018-01-01",
+            "n_articles": 2,
+            "n_matched_controls": 80,
+            "difference_pp_vs_local_controls": 11.202186
+          },
+          {
+            "episode_start": "2018-02-23",
+            "n_articles": 2,
+            "n_matched_controls": 10,
+            "difference_pp_vs_local_controls": 8.16641
+          },
+          {
+            "episode_start": "2018-03-08",
+            "n_articles": 2,
+            "n_matched_controls": 22,
+            "difference_pp_vs_local_controls": 11.038961
+          },
+          {
+            "episode_start": "2018-04-30",
+            "n_articles": 3,
+            "n_matched_controls": 44,
+            "difference_pp_vs_local_controls": -17.195402
+          },
+          {
+            "episode_start": "2018-05-09",
+            "n_articles": 2,
+            "n_matched_controls": 13,
+            "difference_pp_vs_local_controls": 54.0
+          },
+          {
+            "episode_start": "2018-06-11",
+            "n_articles": 2,
+            "n_matched_controls": 43,
+            "difference_pp_vs_local_controls": 38.397683
+          },
+          {
+            "episode_start": "2018-11-05",
+            "n_articles": 2,
+            "n_matched_controls": 16,
+            "difference_pp_vs_local_controls": 29.048234
+          },
+          {
+            "episode_start": "2018-12-31",
+            "n_articles": 5,
+            "n_matched_controls": 108,
+            "difference_pp_vs_local_controls": -14.141414
+          },
+          {
+            "episode_start": "2019-03-08",
+            "n_articles": 1,
+            "n_matched_controls": 17,
+            "difference_pp_vs_local_controls": -24.19114
+          },
+          {
+            "episode_start": "2019-05-01",
+            "n_articles": 4,
+            "n_matched_controls": 43,
+            "difference_pp_vs_local_controls": 20.348959
+          },
+          {
+            "episode_start": "2019-05-09",
+            "n_articles": 1,
+            "n_matched_controls": 31,
+            "difference_pp_vs_local_controls": 56.338028
+          },
+          {
+            "episode_start": "2019-11-04",
+            "n_articles": 1,
+            "n_matched_controls": 31,
+            "difference_pp_vs_local_controls": 42.391304
+          },
+          {
+            "episode_start": "2020-01-01",
+            "n_articles": 13,
+            "n_matched_controls": 75,
+            "difference_pp_vs_local_controls": -5.970149
+          },
+          {
+            "episode_start": "2020-02-24",
+            "n_articles": 1,
+            "n_matched_controls": 14,
+            "difference_pp_vs_local_controls": 9.532619
+          },
+          {
+            "episode_start": "2020-03-09",
+            "n_articles": 2,
+            "n_matched_controls": 10,
+            "difference_pp_vs_local_controls": -28.481013
+          },
+          {
+            "episode_start": "2020-05-01",
+            "n_articles": 11,
+            "n_matched_controls": 30,
+            "difference_pp_vs_local_controls": -19.230769
+          },
+          {
+            "episode_start": "2020-05-11",
+            "n_articles": 3,
+            "n_matched_controls": 16,
+            "difference_pp_vs_local_controls": -1.717033
+          },
+          {
+            "episode_start": "2020-11-04",
+            "n_articles": 2,
+            "n_matched_controls": 26,
+            "difference_pp_vs_local_controls": 19.551821
+          },
+          {
+            "episode_start": "2021-01-01",
+            "n_articles": 8,
+            "n_matched_controls": 95,
+            "difference_pp_vs_local_controls": 6.25
+          },
+          {
+            "episode_start": "2021-02-22",
+            "n_articles": 6,
+            "n_matched_controls": 48,
+            "difference_pp_vs_local_controls": 24.608381
+          },
+          {
+            "episode_start": "2021-03-08",
+            "n_articles": 1,
+            "n_matched_controls": 21,
+            "difference_pp_vs_local_controls": -27.205784
+          },
+          {
+            "episode_start": "2021-05-03",
+            "n_articles": 1,
+            "n_matched_controls": 15,
+            "difference_pp_vs_local_controls": -17.573566
+          },
+          {
+            "episode_start": "2021-06-14",
+            "n_articles": 3,
+            "n_matched_controls": 25,
+            "difference_pp_vs_local_controls": -20.879121
+          },
+          {
+            "episode_start": "2021-11-04",
+            "n_articles": 5,
+            "n_matched_controls": 31,
+            "difference_pp_vs_local_controls": 2.12766
+          },
+          {
+            "episode_start": "2021-12-31",
+            "n_articles": 5,
+            "n_matched_controls": 102,
+            "difference_pp_vs_local_controls": 38.296605
+          },
+          {
+            "episode_start": "2022-02-23",
+            "n_articles": 3,
+            "n_matched_controls": 16,
+            "difference_pp_vs_local_controls": 13.522013
+          },
+          {
+            "episode_start": "2022-03-07",
+            "n_articles": 2,
+            "n_matched_controls": 31,
+            "difference_pp_vs_local_controls": 16.037736
+          },
+          {
+            "episode_start": "2022-05-02",
+            "n_articles": 3,
+            "n_matched_controls": 40,
+            "difference_pp_vs_local_controls": 18.694064
+          },
+          {
+            "episode_start": "2022-05-09",
+            "n_articles": 2,
+            "n_matched_controls": 38,
+            "difference_pp_vs_local_controls": -21.305936
+          },
+          {
+            "episode_start": "2022-06-13",
+            "n_articles": 2,
+            "n_matched_controls": 21,
+            "difference_pp_vs_local_controls": -23.762376
+          },
+          {
+            "episode_start": "2022-11-04",
+            "n_articles": 2,
+            "n_matched_controls": 15,
+            "difference_pp_vs_local_controls": -9.661687
+          },
+          {
+            "episode_start": "2023-01-02",
+            "n_articles": 17,
+            "n_matched_controls": 148,
+            "difference_pp_vs_local_controls": 16.140351
+          },
+          {
+            "episode_start": "2023-02-23",
+            "n_articles": 5,
+            "n_matched_controls": 70,
+            "difference_pp_vs_local_controls": -9.507861
+          },
+          {
+            "episode_start": "2023-03-08",
+            "n_articles": 3,
+            "n_matched_controls": 35,
+            "difference_pp_vs_local_controls": -31.515152
+          },
+          {
+            "episode_start": "2023-05-01",
+            "n_articles": 3,
+            "n_matched_controls": 31,
+            "difference_pp_vs_local_controls": 37.872474
+          },
+          {
+            "episode_start": "2023-05-08",
+            "n_articles": 3,
+            "n_matched_controls": 67,
+            "difference_pp_vs_local_controls": 26.356589
+          },
+          {
+            "episode_start": "2023-06-12",
+            "n_articles": 7,
+            "n_matched_controls": 30,
+            "difference_pp_vs_local_controls": 12.194033
+          },
+          {
+            "episode_start": "2023-11-06",
+            "n_articles": 3,
+            "n_matched_controls": 34,
+            "difference_pp_vs_local_controls": -47.924268
+          },
+          {
+            "episode_start": "2024-01-01",
+            "n_articles": 16,
+            "n_matched_controls": 202,
+            "difference_pp_vs_local_controls": 22.411172
+          },
+          {
+            "episode_start": "2024-02-23",
+            "n_articles": 3,
+            "n_matched_controls": 28,
+            "difference_pp_vs_local_controls": 9.092362
+          },
+          {
+            "episode_start": "2024-03-08",
+            "n_articles": 1,
+            "n_matched_controls": 25,
+            "difference_pp_vs_local_controls": 59.731544
+          },
+          {
+            "episode_start": "2024-04-29",
+            "n_articles": 11,
+            "n_matched_controls": 112,
+            "difference_pp_vs_local_controls": 14.930556
+          },
+          {
+            "episode_start": "2024-05-09",
+            "n_articles": 9,
+            "n_matched_controls": 79,
+            "difference_pp_vs_local_controls": 13.194444
+          },
+          {
+            "episode_start": "2024-06-12",
+            "n_articles": 2,
+            "n_matched_controls": 44,
+            "difference_pp_vs_local_controls": 28.284063
+          },
+          {
+            "episode_start": "2024-11-04",
+            "n_articles": 4,
+            "n_matched_controls": 43,
+            "difference_pp_vs_local_controls": -15.463918
+          },
+          {
+            "episode_start": "2024-12-30",
+            "n_articles": 31,
+            "n_matched_controls": 271,
+            "difference_pp_vs_local_controls": 17.922078
+          },
+          {
+            "episode_start": "2025-05-01",
+            "n_articles": 20,
+            "n_matched_controls": 123,
+            "difference_pp_vs_local_controls": 12.689394
+          },
+          {
+            "episode_start": "2025-05-08",
+            "n_articles": 10,
+            "n_matched_controls": 119,
+            "difference_pp_vs_local_controls": 26.442308
+          },
+          {
+            "episode_start": "2025-06-12",
+            "n_articles": 21,
+            "n_matched_controls": 159,
+            "difference_pp_vs_local_controls": 24.293737
+          },
+          {
+            "episode_start": "2025-11-03",
+            "n_articles": 18,
+            "n_matched_controls": 183,
+            "difference_pp_vs_local_controls": 15.235457
+          },
+          {
+            "episode_start": "2025-12-31",
+            "n_articles": 73,
+            "n_matched_controls": 520,
+            "difference_pp_vs_local_controls": 11.595787
+          },
+          {
+            "episode_start": "2026-02-23",
+            "n_articles": 13,
+            "n_matched_controls": 109,
+            "difference_pp_vs_local_controls": -5.128205
+          },
+          {
+            "episode_start": "2026-03-09",
+            "n_articles": 14,
+            "n_matched_controls": 114,
+            "difference_pp_vs_local_controls": 19.491525
+          },
+          {
+            "episode_start": "2026-05-01",
+            "n_articles": 15,
+            "n_matched_controls": 149,
+            "difference_pp_vs_local_controls": 1.564945
+          },
+          {
+            "episode_start": "2026-05-11",
+            "n_articles": 19,
+            "n_matched_controls": 166,
+            "difference_pp_vs_local_controls": -7.886182
+          },
+          {
+            "episode_start": "2026-06-12",
+            "n_articles": 15,
+            "n_matched_controls": 150,
+            "difference_pp_vs_local_controls": 13.362702
+          }
+        ],
+        "n_positive_local_comparisons": 44,
+        "warning": "Small number of episodes; resampling or individual-article p-values do not establish causal effects."
+      }
+    },
+    "wide": {
+      "text_sample_quartile_check": {
+        "mature_population_pct": [
+          26.534596,
+          26.328537,
+          25.536838,
+          21.600029
+        ],
+        "mature_text_sample_pct": [
+          26.525199,
+          26.436782,
+          25.729443,
+          21.308576
+        ],
+        "n_text_sample": 1131,
+        "definition": "VPD quartiles from entire original corpus including young articles"
+      },
+      "regression": {
+        "baseline": {
+          "n": 16577,
+          "ratio_views_plus1": 1.266473,
+          "ci95_cluster_author": [
+            1.157374,
+            1.385855
+          ],
+          "calendar_controls": "month",
+          "age_controls": "log",
+          "interpretation": "conditional association, not a causal effect"
+        },
+        "quarter_calendar": {
+          "n": 16577,
+          "ratio_views_plus1": 1.264208,
+          "ci95_cluster_author": [
+            1.15706,
+            1.381279
+          ],
+          "calendar_controls": "quarter",
+          "age_controls": "log",
+          "interpretation": "conditional association, not a causal effect"
+        },
+        "age_bands": {
+          "n": 16577,
+          "ratio_views_plus1": 1.26405,
+          "ci95_cluster_author": [
+            1.154445,
+            1.384061
+          ],
+          "calendar_controls": "month",
+          "age_controls": "bands",
+          "interpretation": "conditional association, not a causal effect"
+        }
+      },
+      "age_comparison": {
+        "median_weekend": 206.021451,
+        "median_weekday": 193.876462,
+        "iqr_weekend": [
+          121.333112,
+          282.05619
+        ],
+        "iqr_weekday": [
+          110.54654,
+          272.470748
+        ]
+      },
+      "holidays": {
+        "n_episodes": 7,
+        "n_holiday_articles": 479,
+        "n_control_articles": 3661,
+        "difference_pp": 14.4278,
+        "leave_one_episode_out": [
+          {
+            "episode_start": "2025-11-03",
+            "episode_end": "2025-11-04",
+            "n_articles_removed": 67,
+            "difference_pp_without_episode": 14.034326
+          },
+          {
+            "episode_start": "2025-12-31",
+            "episode_end": "2026-01-09",
+            "n_articles_removed": 217,
+            "difference_pp_without_episode": 16.609654
+          },
+          {
+            "episode_start": "2026-02-23",
+            "episode_end": "2026-02-23",
+            "n_articles_removed": 40,
+            "difference_pp_without_episode": 14.673772
+          },
+          {
+            "episode_start": "2026-03-09",
+            "episode_end": "2026-03-09",
+            "n_articles_removed": 46,
+            "difference_pp_without_episode": 14.348361
+          },
+          {
+            "episode_start": "2026-05-01",
+            "episode_end": "2026-05-01",
+            "n_articles_removed": 30,
+            "difference_pp_without_episode": 14.114261
+          },
+          {
+            "episode_start": "2026-05-11",
+            "episode_end": "2026-05-11",
+            "n_articles_removed": 48,
+            "difference_pp_without_episode": 14.348361
+          },
+          {
+            "episode_start": "2026-06-12",
+            "episode_end": "2026-06-12",
+            "n_articles_removed": 31,
+            "difference_pp_without_episode": 14.388081
+          }
+        ],
+        "loo_min_pp": 14.034326,
+        "loo_max_pp": 16.609654,
+        "episode_local_comparisons": [
+          {
+            "episode_start": "2025-11-03",
+            "n_articles": 67,
+            "n_matched_controls": 698,
+            "difference_pp_vs_local_controls": 17.669655
+          },
+          {
+            "episode_start": "2025-12-31",
+            "n_articles": 217,
+            "n_matched_controls": 1559,
+            "difference_pp_vs_local_controls": 11.679454
+          },
+          {
+            "episode_start": "2026-02-23",
+            "n_articles": 40,
+            "n_matched_controls": 299,
+            "difference_pp_vs_local_controls": 6.898656
+          },
+          {
+            "episode_start": "2026-03-09",
+            "n_articles": 46,
+            "n_matched_controls": 299,
+            "difference_pp_vs_local_controls": 18.165042
+          },
+          {
+            "episode_start": "2026-05-01",
+            "n_articles": 30,
+            "n_matched_controls": 346,
+            "difference_pp_vs_local_controls": 21.442284
+          },
+          {
+            "episode_start": "2026-05-11",
+            "n_articles": 48,
+            "n_matched_controls": 375,
+            "difference_pp_vs_local_controls": 17.212567
+          },
+          {
+            "episode_start": "2026-06-12",
+            "n_articles": 31,
+            "n_matched_controls": 314,
+            "difference_pp_vs_local_controls": 18.603
+          }
+        ],
+        "n_positive_local_comparisons": 7,
+        "warning": "Small number of episodes; resampling or individual-article p-values do not establish causal effects."
+      }
+    }
+  },
+  "status": "retrospective sensitivity checks, exploratory"
+}
