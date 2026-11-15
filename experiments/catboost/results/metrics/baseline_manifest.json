@@ -1,0 +1,50 @@
+{
+  "frozen_at": "2026-11-13 18:34:38",
+  "protocol": "cb-research-v1",
+  "input_sha256": {
+    "ai": "3d9f027ed9ed7233299b0ab1ef139f520ad7759283ec4619cb8ea0f1cd1c953d",
+    "ai_declared_matches": true,
+    "wide": "3b0c0ae6a9f6e18a3127c72ccbafd43b054dccfa3ac60a2b62d6ec3b704ef4a6",
+    "wide_declared_matches": true
+  },
+  "frozen_artifacts": [
+    "08_model_results.json",
+    "slot_rule_comparison.json",
+    "11_leakage_diagnostic.json",
+    "run_environment.json"
+  ],
+  "v24_reference_models": {
+    "ai": {
+      "v24_split": "2026-01-01",
+      "rho": 0.18038078725863427,
+      "rho_within_month": 0.12567972312632586,
+      "mae_log": 1.5297372975880028,
+      "baseline_mae_log": 1.3076666233602359
+    },
+    "wide": {
+      "v24_split": "2026-05-01",
+      "rho": 0.10404565054540425,
+      "rho_within_month": 0.11721002161988663,
+      "mae_log": 1.6088330492514167,
+      "baseline_mae_log": 1.0546250418664336
+    }
+  },
+  "v24_reference_slot_rules": {
+    "ai": {
+      "model_ratio": 1.1749321490254132,
+      "naive_ratio": 1.339913336543091,
+      "rho_grid": 0.07500439347299134,
+      "rho_weekend": 0.09555461655576314,
+      "delta_rho": 0.020550223082771796
+    },
+    "wide": {
+      "model_ratio": 1.0453387671930718,
+      "naive_ratio": 1.3953488372093024,
+      "rho_grid": 0.01187014223428011,
+      "rho_weekend": 0.1150696088189981,
+      "delta_rho": 0.10319946658471799
+    }
+  },
+  "lightgbm_version": "4.5.0",
+  "note": "Опорные значения скопированы из замороженных артефактов статьи v25; этап 2 сверяет с ними воспроизведение, но не подгоняет параметры."
+}

@@ -1,0 +1,352 @@
+{
+  "ai": {
+    "loss_id": "L05_quantile_log1p",
+    "trees_frozen": 123,
+    "seeds": {
+      "20261111": {
+        "delta_rho": 0.026064435609119987,
+        "delta_rho_ci_author": [
+          -0.0065555533942303875,
+          0.05912819722481311
+        ],
+        "delta_rho_pct": 0.02490470563852401,
+        "delta_rho_ci_author_pct": [
+          -0.008027789944179395,
+          0.05684856464380544
+        ]
+      },
+      "20261112": {
+        "delta_rho": 0.035939440310110524,
+        "delta_rho_ci_author": [
+          0.004080521342393302,
+          0.06932645165127063
+        ],
+        "delta_rho_pct": 0.03138693926852898,
+        "delta_rho_ci_author_pct": [
+          -0.0008055259150271801,
+          0.06412984746682314
+        ]
+      },
+      "20261113": {
+        "delta_rho": 0.039747220245261936,
+        "delta_rho_ci_author": [
+          0.007525500024256414,
+          0.07286480219912933
+        ],
+        "delta_rho_pct": 0.033926554375129855,
+        "delta_rho_ci_author_pct": [
+          0.0007398170658039875,
+          0.06762626156291052
+        ]
+      }
+    },
+    "authors_known": {
+      "n": 1895,
+      "n_authors": 763,
+      "rho_slot_views": 0.10482401237779333,
+      "rho_weekend_views": 0.09287972141839552,
+      "delta_rho_views": 0.011944290959397807,
+      "rho_slot_pct": 0.1128608434954378,
+      "rho_weekend_pct": 0.10476481928350372,
+      "delta_rho_pct": 0.008096024211934089,
+      "delta_rho_within_month_views": 0.009808730896872208,
+      "delta_rho_within_month_pct": 0.009808730896872208,
+      "within_month_n": 10,
+      "n_weekday": 1556,
+      "rho_slot_views_weekday": 0.07176287537530511,
+      "rho_slot_pct_weekday": 0.07492653408120047,
+      "delta_rho_within_month_views_weekday": null,
+      "delta_rho_within_month_pct_weekday": null,
+      "delta_rho_ci_author_views": [
+        -0.030846829465873783,
+        0.05474793470194158
+      ],
+      "delta_rho_ci_author_pct": [
+        -0.03487816460221002,
+        0.05220112074033466
+      ],
+      "delta_rho_ci_week_views": [
+        -0.029228073434633628,
+        0.054720558119261374
+      ]
+    },
+    "authors_new": {
+      "n": 1220,
+      "n_authors": 1220,
+      "rho_slot_views": 0.1477397572756747,
+      "rho_weekend_views": 0.09434020341899492,
+      "delta_rho_views": 0.053399553856679785,
+      "rho_slot_pct": 0.12378950129624297,
+      "rho_weekend_pct": 0.07062751111518112,
+      "delta_rho_pct": 0.05316199018106185,
+      "delta_rho_within_month_views": 0.05599738373371825,
+      "delta_rho_within_month_pct": 0.05599738373371825,
+      "within_month_n": 10,
+      "n_weekday": 999,
+      "rho_slot_views_weekday": 0.11481324971394936,
+      "rho_slot_pct_weekday": 0.10393219183220309,
+      "delta_rho_within_month_views_weekday": null,
+      "delta_rho_within_month_pct_weekday": null,
+      "delta_rho_ci_author_views": [
+        0.0074129841568592,
+        0.09782870321831612
+      ],
+      "delta_rho_ci_author_pct": [
+        0.009364030079326223,
+        0.09960824741138738
+      ],
+      "delta_rho_ci_week_views": [
+        0.007142228619934741,
+        0.09968748067556782
+      ]
+    },
+    "no_top1pct": {
+      "n": 3083,
+      "n_authors": 1637,
+      "rho_slot_views": 0.12284691657193232,
+      "rho_weekend_views": 0.09524933812533416,
+      "delta_rho_views": 0.02759757844659816,
+      "rho_slot_pct": 0.11734326956958421,
+      "rho_weekend_pct": 0.09131035321658566,
+      "delta_rho_pct": 0.02603291635299855,
+      "delta_rho_within_month_views": 0.029430788251080902,
+      "delta_rho_within_month_pct": 0.029430788251080902,
+      "within_month_n": 10,
+      "n_weekday": 2529,
+      "rho_slot_views_weekday": 0.08767839762447997,
+      "rho_slot_pct_weekday": 0.08601608361247468,
+      "delta_rho_within_month_views_weekday": null,
+      "delta_rho_within_month_pct_weekday": null,
+      "delta_rho_ci_author_views": [
+        -0.00650486289550358,
+        0.05969342197951748
+      ],
+      "delta_rho_ci_author_pct": [
+        -0.007861847945482463,
+        0.05749686918624152
+      ],
+      "delta_rho_ci_week_views": [
+        -0.004950476477506325,
+        0.05808515068295215
+      ],
+      "views_p99": 63483.02000000006
+    },
+    "folds_b1": [
+      {
+        "cut": "2022-01-01",
+        "n_train": 5062,
+        "n_test": 350,
+        "delta_rho": -0.08247991262061145,
+        "delta_rho_pct": -0.06357942615091078,
+        "rho_slot": 0.028805141863224207,
+        "rho_slot_pct": 0.04053495534961692
+      },
+      {
+        "cut": "2023-01-01",
+        "n_train": 6080,
+        "n_test": 687,
+        "delta_rho": -0.03058318141394209,
+        "delta_rho_pct": -0.034061119475445545,
+        "rho_slot": 0.10903709326416111,
+        "rho_slot_pct": 0.1108436044376161
+      },
+      {
+        "cut": "2024-01-01",
+        "n_train": 7749,
+        "n_test": 895,
+        "delta_rho": 0.024493102636712533,
+        "delta_rho_pct": 0.020909538307081796,
+        "rho_slot": 0.1302067297040573,
+        "rho_slot_pct": 0.11783913320575243
+      },
+      {
+        "cut": "2025-01-01",
+        "n_train": 9923,
+        "n_test": 2034,
+        "delta_rho": 0.03928819409225422,
+        "delta_rho_pct": 0.03930554677331656,
+        "rho_slot": 0.09161902729472367,
+        "rho_slot_pct": 0.09113991587136684
+      }
+    ]
+  },
+  "wide": {
+    "loss_id": "L01_rmse_log1p",
+    "trees_frozen": 152,
+    "seeds": {
+      "20261111": {
+        "delta_rho": 0.06073741868414456,
+        "delta_rho_ci_author": [
+          0.02571879019982317,
+          0.09476679961906104
+        ],
+        "delta_rho_pct": 0.05853434519392385,
+        "delta_rho_ci_author_pct": [
+          0.02240015811722575,
+          0.09121963021876234
+        ]
+      },
+      "20261112": {
+        "delta_rho": 0.05818433552387883,
+        "delta_rho_ci_author": [
+          0.024183486448088022,
+          0.09251334323367323
+        ],
+        "delta_rho_pct": 0.05556264498368173,
+        "delta_rho_ci_author_pct": [
+          0.02067260243174299,
+          0.08893138038803304
+        ]
+      },
+      "20261113": {
+        "delta_rho": 0.06034278370576032,
+        "delta_rho_ci_author": [
+          0.024752004278026166,
+          0.09372202389739456
+        ],
+        "delta_rho_pct": 0.05807500754093249,
+        "delta_rho_ci_author_pct": [
+          0.021903491493198087,
+          0.0900368246417887
+        ]
+      }
+    },
+    "authors_known": {
+      "n": 3642,
+      "n_authors": 846,
+      "rho_slot_views": 0.1890060296842515,
+      "rho_weekend_views": 0.12391399093823639,
+      "delta_rho_views": 0.06509203874601512,
+      "rho_slot_pct": 0.18777482457778683,
+      "rho_weekend_pct": 0.12389170514346748,
+      "delta_rho_pct": 0.06388311943431935,
+      "delta_rho_within_month_views": 0.06490010819159064,
+      "delta_rho_within_month_pct": 0.06490010819159064,
+      "within_month_n": 6,
+      "n_weekday": 2948,
+      "rho_slot_views_weekday": 0.15590767830146632,
+      "rho_slot_pct_weekday": 0.1540516507519882,
+      "delta_rho_within_month_views_weekday": null,
+      "delta_rho_within_month_pct_weekday": null,
+      "delta_rho_ci_author_views": [
+        0.02225528409631212,
+        0.10636187584051858
+      ],
+      "delta_rho_ci_author_pct": [
+        0.018063802568597437,
+        0.10473788457344034
+      ],
+      "delta_rho_ci_week_views": [
+        0.03702297953604977,
+        0.09265299030780874
+      ]
+    },
+    "authors_new": {
+      "n": 1252,
+      "n_authors": 1252,
+      "rho_slot_views": 0.13065146404185188,
+      "rho_weekend_views": 0.07954368727991122,
+      "delta_rho_views": 0.05110777676194066,
+      "rho_slot_pct": 0.12190697546637586,
+      "rho_weekend_pct": 0.07470369331763847,
+      "delta_rho_pct": 0.04720328214873738,
+      "delta_rho_within_month_views": 0.04813620214274918,
+      "delta_rho_within_month_pct": 0.04813620214274918,
+      "within_month_n": 6,
+      "n_weekday": 1046,
+      "rho_slot_views_weekday": 0.10092079848984027,
+      "rho_slot_pct_weekday": 0.09414434011972196,
+      "delta_rho_within_month_views_weekday": null,
+      "delta_rho_within_month_pct_weekday": null,
+      "delta_rho_ci_author_views": [
+        0.002678247228234441,
+        0.09655895941060276
+      ],
+      "delta_rho_ci_author_pct": [
+        -0.003430760791603688,
+        0.09494753942011624
+      ],
+      "delta_rho_ci_week_views": [
+        0.0012371976369300224,
+        0.09542469009413987
+      ]
+    },
+    "no_top1pct": {
+      "n": 4845,
+      "n_authors": 1768,
+      "rho_slot_views": 0.17613186960568986,
+      "rho_weekend_views": 0.11617054357357323,
+      "delta_rho_views": 0.059961326032116624,
+      "rho_slot_pct": 0.1738372469764021,
+      "rho_weekend_pct": 0.1159532185882761,
+      "delta_rho_pct": 0.057884028388125994,
+      "delta_rho_within_month_views": 0.0595061163630231,
+      "delta_rho_within_month_pct": 0.0595061163630231,
+      "within_month_n": 6,
+      "n_weekday": 3956,
+      "rho_slot_views_weekday": 0.14087100935520075,
+      "rho_slot_pct_weekday": 0.1379930303991185,
+      "delta_rho_within_month_views_weekday": null,
+      "delta_rho_within_month_pct_weekday": null,
+      "delta_rho_ci_author_views": [
+        0.02704430754673919,
+        0.09243803323053312
+      ],
+      "delta_rho_ci_author_pct": [
+        0.023739227629624562,
+        0.09200683550710559
+      ],
+      "delta_rho_ci_week_views": [
+        0.03224996951323024,
+        0.08765011179699443
+      ],
+      "views_p99": 45573.75999999978
+    },
+    "folds_b1": [
+      {
+        "cut": "2025-11-01",
+        "n_train": 5513,
+        "n_test": 1213,
+        "delta_rho": 0.09231147883654364,
+        "delta_rho_pct": 0.09076557032846887,
+        "rho_slot": 0.1255443407671728,
+        "rho_slot_pct": 0.12473250236605854
+      },
+      {
+        "cut": "2026-01-01",
+        "n_train": 8365,
+        "n_test": 1561,
+        "delta_rho": 0.013435912634544932,
+        "delta_rho_pct": 0.006195602771798675,
+        "rho_slot": 0.07363130470632781,
+        "rho_slot_pct": 0.0654436064673053
+      },
+      {
+        "cut": "2026-03-01",
+        "n_train": 10944,
+        "n_test": 2074,
+        "delta_rho": 0.03188447453859799,
+        "delta_rho_pct": 0.03129915266203374,
+        "rho_slot": 0.08301119230575714,
+        "rho_slot_pct": 0.08216663407346406
+      }
+    ]
+  },
+  "wide_no_overlap": {
+    "loss_id": "L01_rmse_log1p",
+    "n_removed_overlap": 3138,
+    "n_train": 7608,
+    "n_test": 4065,
+    "delta_rho": 0.06293405833071887,
+    "delta_rho_ci_author": [
+      0.024417689163706038,
+      0.10025094176333933
+    ],
+    "delta_rho_pct": 0.061364239859014166,
+    "delta_rho_ci_author_pct": [
+      0.02067075282263623,
+      0.09958871523070445
+    ],
+    "rho_slot": 0.17337252457681238
+  }
+}

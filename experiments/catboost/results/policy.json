@@ -1,0 +1,49 @@
+{
+  "protocol": "cb-research-v1",
+  "selected_by": "validation-only (selected_policies.json, заморожено до аудита)",
+  "winner_locked_before_audit": true,
+  "decision_rule": "score слота из финальной модели; threshold - квантиль train; при n_train(slot) < 20 - fallback: правило выходных, вывод «недостаточно наблюдений»",
+  "note": "delta_rho победителя на аудите показан для сведения и в выборе не участвует; остальные модели - исследовательское сравнение",
+  "corpora": {
+    "ai": {
+      "model": "L05_quantile_log1p|density=none",
+      "winner_locked": true,
+      "thresholds_train": {
+        "terciles": [
+          7546.714437427032,
+          8650.64149971346
+        ],
+        "threshold_q": 9505.010463152743,
+        "q_fixed": 0.2,
+        "threshold_sensitivity": {
+          "0.1": 10702.283274078087,
+          "0.3": 8802.531777275022
+        }
+      },
+      "q_fixed": 0.2,
+      "coverage": 0.8595,
+      "fallback": "weekend_rule",
+      "audit_delta_rho_informational": 0.07687254968149905
+    },
+    "wide": {
+      "model": "L01_rmse_log1p|density=none",
+      "winner_locked": true,
+      "thresholds_train": {
+        "terciles": [
+          3254.6581275711656,
+          4143.473140214751
+        ],
+        "threshold_q": 4651.564681755894,
+        "q_fixed": 0.2,
+        "threshold_sensitivity": {
+          "0.1": 5292.209173059694,
+          "0.3": 4255.913394887126
+        }
+      },
+      "q_fixed": 0.2,
+      "coverage": 0.9165,
+      "fallback": "weekend_rule",
+      "audit_delta_rho_informational": 0.13256517846545957
+    }
+  }
+}
