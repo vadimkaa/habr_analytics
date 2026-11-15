@@ -1,0 +1,34 @@
+# Временные окна. Случайное разбиение запрещено как основное.
+# Все границы - Europe/Moscow. Интервалы [start, end): начало включается, конец нет.
+# AI/ML: обучение 2016–2023, валидация 2024, доп. проверка 2025,
+#        зафиксированный аудит - зрелые статьи 2026 (данные были доступны при выборе подхода).
+# Wide:  общее покрытие всех пяти хабов с 24.06.2025; плотности нужен ещё день
+#        истории, поэтому обучение с 25.06.2025; аудит - 01.05.2026..конец среза.
+# audit_end_inclusive не задаётся вслепую: он вычисляется из даты среза и
+# правила age >= 30 дней в коде (data_contract.audit_window).
+
+corpora:
+  ai:
+    loader: ai                  # habr_ai_ml_raw.jsonl.gz
+    eligible: mature & density_complete & year >= 2016
+    folds:
+      dev_train:    {start: "2016-01-01", end: "2024-01-01", role: train}
+      validation:   {start: "2024-01-01", end: "2025-01-01", role: validation}
+      extra_check:  {start: "2025-01-01", end: "2026-01-01", role: extra_check}
+      audit_exposed: {start: "2026-01-01", end: null, role: audit_exposed}
+    rolling:            # rolling-origin для финалистов; параметры НЕ подбираются на фондах
+      - {cut: "2022-01-01", test_months: 12}
+      - {cut: "2023-01-01", test_months: 12}
+      - {cut: "2024-01-01", test_months: 12}
+      - {cut: "2025-01-01", test_months: 12}
+  wide:
+    loader: wide
+    eligible: mature & density_complete & dt_msk >= 2025-06-25   # окно плотности начинается на день позже
+    folds:
+      dev_train:    {start: "2025-06-25", end: "2026-01-01", role: train}
+      validation:   {start: "2026-01-01", end: "2026-05-01", role: validation}
+      audit_exposed: {start: "2026-05-01", end: null, role: audit_exposed}
+    rolling:
+      - {cut: "2025-11-01", test_months: 2}
+      - {cut: "2026-01-01", test_months: 2}
+      - {cut: "2026-03-01", test_months: 2}

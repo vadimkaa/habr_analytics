@@ -1,0 +1,87 @@
+# Матрица функций потерь. Первая волна L01-L03 обязательна,
+# L04-L05 - разумное расширение. Порядок сравнения: одинаковые фонды и признаки,
+# затем натуральная vs логарифмическая квантильная цель, затем Huber/Tweedie.
+# Каждая запись: цель (target), декодирование (decode), eval_metric CatBoost
+# для ранней остановки (соответствует functional цели), флаг квантиля.
+
+losses:
+  L01_rmse_log1p:
+    library_objective: "RMSE"
+    target: log1p            # y = log1p(views)
+    decode: expm1            # views = max(0, expm1(pred)); НЕ смещённая оценка среднего
+    eval_metric: "RMSE"
+    wave: 1
+    priority: high
+    question: "типичная относительная ошибка, устойчивое ранжирование без доминирования хитов"
+  L02_quantile_views_1000:
+    library_objective: "Quantile:alpha=0.5"
+    target: divide_1000      # y = views/1000
+    decode: multiply_1000
+    eval_metric: "Quantile:alpha=0.5"
+    wave: 1
+    priority: high
+    question: "условная медиана натуральных просмотров"
+  L03_poisson_views_1000:
+    library_objective: "Poisson"
+    target: divide_1000      # y = views/1000; сырые просмотры численно неустойчивы (пробный запуск)
+    decode: multiply_1000
+    eval_metric: "Poisson"
+    wave: 1
+    priority: high
+    question: "ожидаемый счётчик, как в исходной статье"
+    scale_check: divide_10000   # обязательная проверка масштаба на ограниченном наборе
+  L04_huber_log1p:
+    library_objective: "Huber:delta=1.0"
+    target: log1p
+    decode: expm1
+    eval_metric: "MAE"
+    wave: 2
+    priority: medium
+    question: "компромисс RMSE и устойчивости к крупным ошибкам в лог-шкале"
+  L05_quantile_log1p:
+    library_objective: "Quantile:alpha=0.5"
+    target: log1p
+    decode: expm1
+    eval_metric: "Quantile:alpha=0.5"
+    wave: 2
+    priority: medium
+    question: "медиана логарифмированной цели; сравнение с L02 изолирует влияние масштаба"
+
+# LightGBM-контроль (та же постановка, другая библиотека).
+lightgbm_controls:
+  lgb_poisson_v24:
+    note: "контрольная модель 08_model.py: исходная шкала просмотров, 300 деревьев"
+    target: views_raw
+    decode: identity
+    params:
+      objective: poisson
+      n_estimators: 300
+      learning_rate: 0.04
+      num_leaves: 15
+      min_child_samples: 60
+      colsample_bytree: 1.0
+      subsample: 1.0
+      random_state: 20261111
+      n_jobs: 2
+      verbosity: -1
+      deterministic: true
+      force_col_wise: true
+      importance_type: gain
+  lgb_rmse_log1p:
+    note: "та же схема с другой функцией потери - изолировать loss, а не библиотеку"
+    target: log1p
+    decode: expm1
+    params:
+      objective: regression
+      n_estimators: 300
+      learning_rate: 0.04
+      num_leaves: 15
+      min_child_samples: 60
+      colsample_bytree: 1.0
+      subsample: 1.0
+      random_state: 20261111
+      n_jobs: 2
+      verbosity: -1
+      deterministic: true
+      force_col_wise: true
+      importance_type: gain

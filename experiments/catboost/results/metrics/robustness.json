@@ -1,0 +1,86 @@
+{
+  "ai": {
+    "finalist_loss": "L05_quantile_log1p",
+    "seeds": {
+      "20261111": {
+        "rho_within_month": 0.12033095620873528,
+        "rho_all": 0.1216779517165197,
+        "mae_log": 1.3998236186417907
+      },
+      "20261112": {
+        "rho_within_month": 0.12229740065336618,
+        "rho_all": 0.12309832256135887,
+        "mae_log": 1.4028218294335464
+      },
+      "20261113": {
+        "rho_within_month": 0.11775810761757628,
+        "rho_all": 0.11936809159473653,
+        "mae_log": 1.398699605187036
+      }
+    },
+    "cold_start": {
+      "n_cold": 5168,
+      "share_cold": 0.853,
+      "rho_within_month_cold": 0.10026528244148307,
+      "rho_within_month_warm": 0.2123689753708024
+    },
+    "tail_1pct_cut": {
+      "threshold_views": 60235.620000000046,
+      "rho_all_full": 0.1216779517165197,
+      "rho_all_cut": 0.11857680107623128,
+      "mae_log_cut": 1.3898642270419017
+    },
+    "eras": {
+      "2026H1": {
+        "n": 3544,
+        "rho_within_month": 0.12164490693593318
+      },
+      "2026H2": {
+        "n": 2515,
+        "rho_within_month": 0.11836003011793846
+      }
+    }
+  },
+  "wide": {
+    "finalist_loss": "L01_rmse_log1p",
+    "seeds": {
+      "20261111": {
+        "rho_within_month": 0.2742112335331137,
+        "rho_all": 0.26185847892205877,
+        "mae_log": 1.0492519477815387
+      },
+      "20261112": {
+        "rho_within_month": 0.2713155613097558,
+        "rho_all": 0.2589533790533917,
+        "mae_log": 1.0497339727182458
+      },
+      "20261113": {
+        "rho_within_month": 0.2744007954408792,
+        "rho_all": 0.26150041304930133,
+        "mae_log": 1.050487216761262
+      }
+    },
+    "cold_start": {
+      "n_cold": 4042,
+      "share_cold": 0.495,
+      "rho_within_month_cold": 0.22192908411761927,
+      "rho_within_month_warm": 0.33562781294747995
+    },
+    "tail_1pct_cut": {
+      "threshold_views": 42720.399999999994,
+      "rho_all_full": 0.26185847892205877,
+      "rho_all_cut": 0.26028779758848536,
+      "mae_log_cut": 1.0328276389990683
+    },
+    "eras": {
+      "2026H1": {
+        "n": 3078,
+        "rho_within_month": 0.2950415612479228
+      },
+      "2026H2": {
+        "n": 5095,
+        "rho_within_month": 0.2637960696757091
+      }
+    }
+  }
+}

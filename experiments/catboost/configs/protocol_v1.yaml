@@ -1,0 +1,88 @@
+# Протокол cb-research-v1: перезапуск исследования просмотров Хабра на CatBoost.
+# Основа: описательная часть статьи и исходная модель LightGBM (08_model.py)
+# как контрольная линия.
+# Файл фиксирует постановку ДО обучения: задачи A и B разделены, критерии
+# отбора записаны заранее, тест 2026 года помечен как audit_exposed.
+
+protocol: cb-research-v1
+
+inputs:
+  manifest: data/input_manifest.json   # SHA-256 входных файлов; пересчёт отказывается работать на изменённой выгрузке
+  corpora:
+    ai: data/habr_ai_ml_raw.jsonl.gz
+    wide: data/habr_wide_raw.jsonl.gz
+
+snapshot:
+  # Опорные даты снятия счётчиков (habrpub/__init__.py), не точное время запроса.
+  ai: "2026-11-10 16:12:14+00:00"
+  wide: "2026-11-10 17:29:18+00:00"
+
+tasks:
+  A: прогноз популярности по допубликационным признакам
+  B: рекомендация времени публикации (policy), не доказательство причинности
+
+# Разделение задач и метрик. Критерии зафиксированы до теста.
+metrics_A:
+  primary: rho_within_month_mean      # Спирмен внутри календарных месяцев (n>=30), равные веса
+  secondary:
+    - mae_log          # MAE(log1p(pred_views) - log1p(views)); абсолютный уровень
+    - rmse_log
+    - bias_log
+    - r2_log
+    - top25_precision_recall   # верхний квартиль месяца
+    - pinball          # только для квантильных моделей (на шкале цели)
+    - coverage_quantile        # доля y <= pred для alpha=0.5 (~0.5)
+  baseline_mae: медиана log1p(views) train
+
+metrics_B:
+  primary: delta_rho                  # rho_slot - rho_weekend, парный авторский бутстреп
+  secondary:
+    - top_q_ratio            # медиана верхних q% по score против остальных, q из train
+    - weekend_q_ratio        # то же покрытие, правило выходных
+    - weekday_only_tercile   # терциль верх/низ только на буднях
+    - coverage               # доля test в поддержанных слотах (n_train >= 20)
+    - hi_lo_tercile          # преемственность с исходной проверкой слотов
+
+policy:
+  support_min_train: 20        # порог числа обучающих статей в слоте
+  q_fixed: 0.20                # доля рекомендуемых слотов, задана по train
+  q_sensitivity: [0.10, 0.30]
+  grid_seasons_month: [1, 4, 7, 10]   # контрольный профиль повторяется на 4 сезонах
+  grid_profile:
+    is_corp: 0
+    has_prior: 0
+    prior_count: 0.0
+    is_holiday: 0
+    t_digit: 0
+    t_qmark: 0
+    t_colon: 0
+    # t_len/t_words - медианы train; месяц - фиксированный реальный месяц сезона.
+  expected_density_shrinkage_k: 20    # сглаживание слотовой медианы к общей
+  fallback: "при низкой поддержке слота - правило выходных, а не точечный прогноз"
+
+splits: configs/splits.yaml
+losses: configs/losses.yaml
+
+selection:  # порядок выбора финалиста ДО последнего теста
+  filter:
+    - отбраковать NaN/inf, нулевую дисперсию прогноза, признаки недоступных входов
+  compare_on: validation            # primary A на валидации, тест не участвует
+  tie_gap: 0.02                     # различие меньше - выбрать более простую/устойчивую модель
+  finalists_max: 3
+  then_check: primary B (delta_rho) у финалистов на тех же фондах
+  audit_note: >-
+    Зрелые статьи 2026 года уже многократно просматривались на предыдущих этапах работы; тест
+    называется audit_exposed, а не независимым подтверждением.
+
+statuses:
+  - exploratory        # разведочные прогоны
+  - validation         # выбор на валидации
+  - audit_exposed      # зафиксированный аудит на уже просмотренном тесте 2026
+  - prospective_confirmed   # только после новых данных (collect_panel.py), вне этого протокола
+
+limits:
+  catboost_seed: 20261111
+  thread_count: 2
+  n_boot: 1000
+  early_stopping_rounds: 100
+  iterations_cap: 1000

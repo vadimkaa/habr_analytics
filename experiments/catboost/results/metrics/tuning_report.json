@@ -1,0 +1,66 @@
+{
+  "C0 x L01": {
+    "rho_within_month": 0.08850537560775107,
+    "mae_log": 0.9748531947391226,
+    "rho_all": 0.08757986159934479,
+    "best_iteration": 35,
+    "fit_time_sec": 0.43,
+    "n_features": 14
+  },
+  "C0 x L02": {
+    "rho_within_month": 0.0814899804989307,
+    "mae_log": 0.9437200807852221,
+    "rho_all": 0.08266166185901565,
+    "best_iteration": 2,
+    "fit_time_sec": 0.45,
+    "n_features": 14
+  },
+  "C2 x L01": {
+    "rho_within_month": 0.08222990385638691,
+    "mae_log": 0.9749087006378945,
+    "rho_all": 0.08186629991442887,
+    "best_iteration": 165,
+    "fit_time_sec": 0.41,
+    "n_features": 14
+  },
+  "C2 x L02": {
+    "rho_within_month": 0.07558023851639877,
+    "mae_log": 0.9439782575204267,
+    "rho_all": 0.07124326061508654,
+    "best_iteration": 0,
+    "fit_time_sec": 0.16,
+    "n_features": 14
+  },
+  "cat dow/hour/month": {
+    "rho_within_month": 0.08889861812438021,
+    "mae_log": 0.9021988013548783,
+    "rho_all": 0.08941320367679623,
+    "best_iteration": 104,
+    "fit_time_sec": 0.92,
+    "n_features": 14
+  },
+  "one-hot dow/hour (max 24)": {
+    "rho_within_month": 0.08526790763610033,
+    "mae_log": 0.9745795151204057,
+    "rho_all": 0.08219904213543389,
+    "best_iteration": 29,
+    "fit_time_sec": 0.25,
+    "n_features": 14
+  },
+  "has_time=True": {
+    "rho_within_month": 0.08703851482716372,
+    "mae_log": 0.9748287031744424,
+    "rho_all": 0.08296991038009922,
+    "best_iteration": 32,
+    "fit_time_sec": 0.24,
+    "n_features": 14
+  },
+  "cyclic sin/cos без сырых dow/hour": {
+    "rho_within_month": 0.0914795341962531,
+    "mae_log": 0.9745210075492976,
+    "rho_all": 0.09007071885996502,
+    "best_iteration": 87,
+    "fit_time_sec": 0.32,
+    "n_features": 12
+  }
+}

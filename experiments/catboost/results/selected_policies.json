@@ -1,0 +1,306 @@
+{
+  "protocol": "cb-research-v1",
+  "frozen_at": "2026-11-13 21:55:34",
+  "code_hash": "ccaeaa9b383b",
+  "input_sha256": {
+    "ai": "3d9f027ed9ed7233299b0ab1ef139f520ad7759283ec4619cb8ea0f1cd1c953d",
+    "ai_declared_matches": true,
+    "wide": "3b0c0ae6a9f6e18a3127c72ccbafd43b054dccfa3ac60a2b62d6ec3b704ef4a6",
+    "wide_declared_matches": true
+  },
+  "selection_rule": "Финалисты: кандидаты CatBoost L01-L05 (контроль LightGBM исключён), сравнение primary-метрики задачи A (rho_within_month_mean) на validation; к лучшему добавляются кандидаты в пределах tie_gap=0.02; не более finalists_max. Ничья: более простая модель (волна конфигурации, затем имя loss). Победитель по корпусу: лучший primary на validation среди финалистов того корпуса. Всё фиксируется до аудита; аудит только оценивает зафиксированное.",
+  "tie_gap": 0.02,
+  "finalists_max": 3,
+  "candidates_validation": {
+    "ai": {
+      "L04_huber_log1p": {
+        "rho_within_month_mean": 0.04921631124231383,
+        "rho_all": 0.03906444909341573,
+        "mae_log": 1.1779477234064375,
+        "baseline_mae_log": 0.9439639273920849
+      },
+      "L05_quantile_log1p": {
+        "rho_within_month_mean": 0.10718559055093889,
+        "rho_all": 0.1033642226237571,
+        "mae_log": 0.9378699532559517,
+        "baseline_mae_log": 0.9439639273920849
+      },
+      "L01_rmse_log1p": {
+        "rho_within_month_mean": 0.08703851482716372,
+        "rho_all": 0.08296991038009922,
+        "mae_log": 0.9748287031744424,
+        "baseline_mae_log": 0.9439639273920849
+      },
+      "L02_quantile_views_1000": {
+        "rho_within_month_mean": 0.08856980343817977,
+        "rho_all": 0.08995159838334592,
+        "mae_log": 0.9433386093078394,
+        "baseline_mae_log": 0.9439639273920849
+      },
+      "L03_poisson_views_1000": {
+        "rho_within_month_mean": 0.057621395397426806,
+        "rho_all": 0.05837584675622912,
+        "mae_log": 1.048304749064951,
+        "baseline_mae_log": 0.9439639273920849
+      }
+    },
+    "wide": {
+      "L04_huber_log1p": {
+        "rho_within_month_mean": 0.16889285182849814,
+        "rho_all": 0.16786134897349866,
+        "mae_log": 1.2028002037346883,
+        "baseline_mae_log": 0.9929847680897979
+      },
+      "L05_quantile_log1p": {
+        "rho_within_month_mean": 0.24353040477763632,
+        "rho_all": 0.24869549010444444,
+        "mae_log": 0.9549859620379962,
+        "baseline_mae_log": 0.9929847680897979
+      },
+      "L01_rmse_log1p": {
+        "rho_within_month_mean": 0.24590685919221683,
+        "rho_all": 0.25015118159153793,
+        "mae_log": 0.9634151586924269,
+        "baseline_mae_log": 0.9929847680897979
+      },
+      "L02_quantile_views_1000": {
+        "rho_within_month_mean": 0.23907120494481987,
+        "rho_all": 0.24439545277505978,
+        "mae_log": 0.9540160828343844,
+        "baseline_mae_log": 0.9929847680897979
+      },
+      "L03_poisson_views_1000": {
+        "rho_within_month_mean": 0.16277598814068953,
+        "rho_all": 0.16618805583459006,
+        "mae_log": 1.266743284029977,
+        "baseline_mae_log": 0.9929847680897979
+      }
+    }
+  },
+  "finalists_by_corpus": {
+    "ai": [
+      "L05_quantile_log1p",
+      "L02_quantile_views_1000"
+    ],
+    "wide": [
+      "L01_rmse_log1p",
+      "L05_quantile_log1p",
+      "L02_quantile_views_1000"
+    ]
+  },
+  "finalists": [
+    "L05_quantile_log1p",
+    "L02_quantile_views_1000",
+    "L01_rmse_log1p"
+  ],
+  "winner_by_corpus": {
+    "ai": "L05_quantile_log1p",
+    "wide": "L01_rmse_log1p"
+  },
+  "control_models": [
+    "lgb_poisson_v24",
+    "lgb_rmse_log1p"
+  ],
+  "frozen_model_configs": {
+    "ai:L05_quantile_log1p": {
+      "loss_id": "L05_quantile_log1p",
+      "config_id": "C1_symmetric",
+      "target_kind": "log1p",
+      "objective": "Quantile:alpha=0.5",
+      "n_trees_fixed_from_validation": 123,
+      "seed": 20261111,
+      "feature_set": "F1_meta",
+      "params": {
+        "iterations": "1000",
+        "learning_rate": "0.04",
+        "grow_policy": "SymmetricTree",
+        "depth": "6",
+        "l2_leaf_reg": "3.0",
+        "random_strength": "1.0",
+        "random_seed": "20261111",
+        "thread_count": "2",
+        "allow_writing_files": "False",
+        "loss_function": "Quantile:alpha=0.5",
+        "eval_metric": "Quantile:alpha=0.5",
+        "has_time": "False"
+      }
+    },
+    "ai:L02_quantile_views_1000": {
+      "loss_id": "L02_quantile_views_1000",
+      "config_id": "C1_symmetric",
+      "target_kind": "divide_1000",
+      "objective": "Quantile:alpha=0.5",
+      "n_trees_fixed_from_validation": 4,
+      "seed": 20261111,
+      "feature_set": "F1_meta",
+      "params": {
+        "iterations": "1000",
+        "learning_rate": "0.04",
+        "grow_policy": "SymmetricTree",
+        "depth": "6",
+        "l2_leaf_reg": "3.0",
+        "random_strength": "1.0",
+        "random_seed": "20261111",
+        "thread_count": "2",
+        "allow_writing_files": "False",
+        "loss_function": "Quantile:alpha=0.5",
+        "eval_metric": "Quantile:alpha=0.5",
+        "has_time": "False"
+      }
+    },
+    "wide:L01_rmse_log1p": {
+      "loss_id": "L01_rmse_log1p",
+      "config_id": "C1_symmetric",
+      "target_kind": "log1p",
+      "objective": "RMSE",
+      "n_trees_fixed_from_validation": 152,
+      "seed": 20261111,
+      "feature_set": "F1_meta",
+      "params": {
+        "iterations": "1000",
+        "learning_rate": "0.04",
+        "grow_policy": "SymmetricTree",
+        "depth": "6",
+        "l2_leaf_reg": "3.0",
+        "random_strength": "1.0",
+        "random_seed": "20261111",
+        "thread_count": "2",
+        "allow_writing_files": "False",
+        "loss_function": "RMSE",
+        "eval_metric": "RMSE",
+        "has_time": "False"
+      }
+    },
+    "wide:L05_quantile_log1p": {
+      "loss_id": "L05_quantile_log1p",
+      "config_id": "C1_symmetric",
+      "target_kind": "log1p",
+      "objective": "Quantile:alpha=0.5",
+      "n_trees_fixed_from_validation": 375,
+      "seed": 20261111,
+      "feature_set": "F1_meta",
+      "params": {
+        "iterations": "1000",
+        "learning_rate": "0.04",
+        "grow_policy": "SymmetricTree",
+        "depth": "6",
+        "l2_leaf_reg": "3.0",
+        "random_strength": "1.0",
+        "random_seed": "20261111",
+        "thread_count": "2",
+        "allow_writing_files": "False",
+        "loss_function": "Quantile:alpha=0.5",
+        "eval_metric": "Quantile:alpha=0.5",
+        "has_time": "False"
+      }
+    },
+    "wide:L02_quantile_views_1000": {
+      "loss_id": "L02_quantile_views_1000",
+      "config_id": "C1_symmetric",
+      "target_kind": "divide_1000",
+      "objective": "Quantile:alpha=0.5",
+      "n_trees_fixed_from_validation": 209,
+      "seed": 20261111,
+      "feature_set": "F1_meta",
+      "params": {
+        "iterations": "1000",
+        "learning_rate": "0.04",
+        "grow_policy": "SymmetricTree",
+        "depth": "6",
+        "l2_leaf_reg": "3.0",
+        "random_strength": "1.0",
+        "random_seed": "20261111",
+        "thread_count": "2",
+        "allow_writing_files": "False",
+        "loss_function": "Quantile:alpha=0.5",
+        "eval_metric": "Quantile:alpha=0.5",
+        "has_time": "False"
+      }
+    }
+  },
+  "policy_freeze": {
+    "thresholds_source": "train_only",
+    "score_definition": "model_score = декодированный прогноз финальной модели на фактическом слоте статьи (режим A, full_prediction)",
+    "q_fixed": 0.2,
+    "q_sensitivity": [
+      0.1,
+      0.3
+    ],
+    "support_min_train": 20,
+    "fallback": "при низкой поддержке слота - правило выходных, а не точечный прогноз",
+    "density_mode": "none (F1_meta); dens24_actual в политике запрещён; F3 expected - отдельная диагностическая ветка",
+    "b2_recommendation_rule": "аргмакс прогноза среди поддержанных слотов месяца статьи (канонические реальные даты месяца); слоты с n_train < 20 не рекомендуются",
+    "weekend_rule_definition": "argmax (is_weekend, hour) лексикографически по тем же поддержанным слотам (выходной важнее, поздний час важнее)",
+    "n_boot": 1000,
+    "bootstrap_seed": 20261111
+  },
+  "b1_profiles_frozen": {
+    "ai": {
+      "novice": {
+        "t_len": 58.0,
+        "t_words": 8.0,
+        "t_digit": 0,
+        "t_qmark": 0,
+        "t_colon": 0,
+        "is_corp": 0,
+        "has_prior": 0,
+        "prior_count": 0.0
+      },
+      "experienced": {
+        "t_len": 58.0,
+        "t_words": 8.0,
+        "t_digit": 0,
+        "t_qmark": 0,
+        "t_colon": 0,
+        "is_corp": 0,
+        "has_prior": 1,
+        "prior_count": 3.58351893845611
+      },
+      "corp": {
+        "t_len": 58.0,
+        "t_words": 8.0,
+        "t_digit": 0,
+        "t_qmark": 0,
+        "t_colon": 0,
+        "is_corp": 1,
+        "has_prior": 1,
+        "prior_count": 1.791759469228055
+      }
+    },
+    "wide": {
+      "novice": {
+        "t_len": 71.0,
+        "t_words": 10.0,
+        "t_digit": 0,
+        "t_qmark": 0,
+        "t_colon": 0,
+        "is_corp": 0,
+        "has_prior": 0,
+        "prior_count": 0.0
+      },
+      "experienced": {
+        "t_len": 71.0,
+        "t_words": 10.0,
+        "t_digit": 0,
+        "t_qmark": 0,
+        "t_colon": 0,
+        "is_corp": 0,
+        "has_prior": 1,
+        "prior_count": 4.714014536303714
+      },
+      "corp": {
+        "t_len": 71.0,
+        "t_words": 10.0,
+        "t_digit": 0,
+        "t_qmark": 0,
+        "t_colon": 0,
+        "is_corp": 1,
+        "has_prior": 1,
+        "prior_count": 2.5649493574615367
+      }
+    }
+  },
+  "audit_note": "Зрелые статьи 2026 года уже многократно просматривались в v24 и v25; тест называется audit_exposed, а не независимым подтверждением.",
+  "winner_locked_before_audit": true,
+  "note": "Файл фиксирует выбор ДО прогона audit_exposed; стадия policy только оценивает зафиксированные политики и не меняет победителя."
+}
