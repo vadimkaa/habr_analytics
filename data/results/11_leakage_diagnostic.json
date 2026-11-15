@@ -1,0 +1,19 @@
+{
+  "n_train": 14319,
+  "n_test": 6059,
+  "warning": "not a prospective backtest",
+  "variants": {
+    "original_future_outcomes": {
+      "rho": 0.2970192934147629,
+      "r2": -0.036040451130564755
+    },
+    "past_count_only": {
+      "rho": 0.1547738979708219,
+      "r2": -0.206401133052045
+    },
+    "no_author": {
+      "rho": 0.12786156832702997,
+      "r2": -0.24615942223373244
+    }
+  }
+}

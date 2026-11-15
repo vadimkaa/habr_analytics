@@ -1,0 +1,304 @@
+{
+  "maturity_thresholds": {
+    "ai": [
+      {
+        "min_age_days": 7,
+        "n": 7397,
+        "weekend_ratio": 1.3593246396934515
+      },
+      {
+        "min_age_days": 14,
+        "n": 7194,
+        "weekend_ratio": 1.3761408186922883
+      },
+      {
+        "min_age_days": 30,
+        "n": 6775,
+        "weekend_ratio": 1.4084331855467902
+      },
+      {
+        "min_age_days": 60,
+        "n": 5973,
+        "weekend_ratio": 1.336692117872258
+      },
+      {
+        "min_age_days": 90,
+        "n": 5216,
+        "weekend_ratio": 1.336967682773365
+      }
+    ],
+    "wide": [
+      {
+        "min_age_days": 7,
+        "n": 17921,
+        "weekend_ratio": 1.4587521740704172
+      },
+      {
+        "min_age_days": 14,
+        "n": 17523,
+        "weekend_ratio": 1.4763925004823335
+      },
+      {
+        "min_age_days": 30,
+        "n": 16577,
+        "weekend_ratio": 1.469859023766394
+      },
+      {
+        "min_age_days": 60,
+        "n": 15057,
+        "weekend_ratio": 1.383555973073685
+      },
+      {
+        "min_age_days": 90,
+        "n": 13478,
+        "weekend_ratio": 1.3770955558225504
+      }
+    ]
+  },
+  "images": {
+    "n": 1516,
+    "median_images": 2.0,
+    "share_without_images": 0.1787598944591029,
+    "rho_count": 0.08063922841541805,
+    "rho_per_1000_words": 0.03984737367709709,
+    "rho_per_1000_words_ci_author": [
+      -0.030223779139248223,
+      0.11016541237327403
+    ],
+    "rho_per_1000_words_by_corpus": {
+      "ai": 0.03891259896887992,
+      "wide": 0.05404199319470894
+    },
+    "n_more_than_20": 60,
+    "vpd_median_more_than_20": 16.877440396107406,
+    "vpd_median_rest": 10.658055842230668,
+    "words_median_more_than_20": 2108.5,
+    "words_median_rest": 1049.5
+  },
+  "top_producers": {
+    "ai": {
+      "all": {
+        "n": 6775,
+        "share_of_window": 1.0,
+        "weekend_ratio": 1.4084331855467902,
+        "ci95_author": [
+          1.2434507221804092,
+          1.5493586329336297
+        ]
+      },
+      "without_top10_authors": {
+        "n": 6241,
+        "share_of_window": 0.9211808118081181,
+        "weekend_ratio": 1.4083262512644523,
+        "ci95_author": [
+          1.247677959608362,
+          1.5719616714781057
+        ]
+      },
+      "without_top1pct_authors": {
+        "n": 5794,
+        "share_of_window": 0.8552029520295203,
+        "weekend_ratio": 1.3595643772494213,
+        "ci95_author": [
+          1.2271176820039869,
+          1.5462731150516869
+        ]
+      },
+      "without_top10_blogs": {
+        "n": 5662,
+        "share_of_window": 0.835719557195572,
+        "weekend_ratio": 1.4098005864713383,
+        "ci95_author": [
+          1.259798401315274,
+          1.5774605483309916
+        ]
+      },
+      "personal_only": {
+        "n": 3996,
+        "share_of_window": 0.5898154981549816,
+        "weekend_ratio": 1.3490889398055361,
+        "ci95_author": [
+          1.1708619301002936,
+          1.5013991334666432
+        ]
+      },
+      "corporate_only": {
+        "n": 2779,
+        "share_of_window": 0.4101845018450184,
+        "weekend_ratio": 1.534354824260269,
+        "ci95_author": [
+          1.1438922973660133,
+          1.9211609850022293
+        ]
+      },
+      "n_top1pct_authors": 29,
+      "top10_blogs": [
+        "bothub",
+        "otus",
+        "ru_mts",
+        "selectel",
+        "sberbank",
+        "ruvds",
+        "timeweb",
+        "yandex",
+        "cloud_ru",
+        "yandex_praktikum"
+      ]
+    },
+    "wide": {
+      "all": {
+        "n": 16577,
+        "share_of_window": 1.0,
+        "weekend_ratio": 1.469859023766394,
+        "ci95_author": [
+          1.277019794477565,
+          1.6411691091110459
+        ]
+      },
+      "without_top10_authors": {
+        "n": 13001,
+        "share_of_window": 0.7842794232973397,
+        "weekend_ratio": 1.491892774354042,
+        "ci95_author": [
+          1.2902669006607679,
+          1.6879459089878834
+        ]
+      },
+      "without_top1pct_authors": {
+        "n": 10842,
+        "share_of_window": 0.6540387283585691,
+        "weekend_ratio": 1.4504999413407693,
+        "ci95_author": [
+          1.3012744625676271,
+          1.6051847467723575
+        ]
+      },
+      "without_top10_blogs": {
+        "n": 14186,
+        "share_of_window": 0.855764010375822,
+        "weekend_ratio": 1.4066513186345295,
+        "ci95_author": [
+          1.263764300801103,
+          1.579913513917419
+        ]
+      },
+      "personal_only": {
+        "n": 10659,
+        "share_of_window": 0.6429993364299934,
+        "weekend_ratio": 1.2472014611191964,
+        "ci95_author": [
+          1.1312880998435386,
+          1.390181603600756
+        ]
+      },
+      "corporate_only": {
+        "n": 5918,
+        "share_of_window": 0.35700066357000665,
+        "weekend_ratio": 2.151225883507844,
+        "ci95_author": [
+          1.4559777779114338,
+          2.622113939231664
+        ]
+      },
+      "n_top1pct_authors": 43,
+      "top10_blogs": [
+        "bothub",
+        "otus",
+        "ruvds",
+        "pt",
+        "selectel",
+        "ru_mts",
+        "beget",
+        "timeweb",
+        "spring_aio",
+        "haulmont"
+      ]
+    }
+  },
+  "readability_calendar": {
+    "oborneva": {
+      "ai": {
+        "n": 385,
+        "n_months": 116,
+        "month": {
+          "partial_rank_correlation": 0.37713844406107544,
+          "n_parameters": 139
+        },
+        "year_and_month_of_year": {
+          "partial_rank_correlation": 0.3065133170116264,
+          "n_parameters": 49,
+          "ci95_author": [
+            0.187009332327295,
+            0.40761628922819293
+          ]
+        },
+        "none": {
+          "partial_rank_correlation": 0.3003557740635168,
+          "n_parameters": 24
+        }
+      },
+      "wide": {
+        "n": 1131,
+        "n_months": 24,
+        "month": {
+          "partial_rank_correlation": 0.16392849764063108,
+          "n_parameters": 47
+        },
+        "year_and_month_of_year": {
+          "partial_rank_correlation": 0.16111991215840715,
+          "n_parameters": 37,
+          "ci95_author": [
+            0.09884292507036956,
+            0.23309622782943804
+          ]
+        },
+        "none": {
+          "partial_rank_correlation": 0.1591655048857574,
+          "n_parameters": 24
+        }
+      }
+    },
+    "asl": {
+      "ai": {
+        "n": 385,
+        "n_months": 116,
+        "month": {
+          "partial_rank_correlation": -0.2106936094633605,
+          "n_parameters": 139
+        },
+        "year_and_month_of_year": {
+          "partial_rank_correlation": -0.16918850756623416,
+          "n_parameters": 49,
+          "ci95_author": [
+            -0.26489117100026743,
+            -0.05104390941277656
+          ]
+        },
+        "none": {
+          "partial_rank_correlation": -0.1660637254628364,
+          "n_parameters": 24
+        }
+      },
+      "wide": {
+        "n": 1131,
+        "n_months": 24,
+        "month": {
+          "partial_rank_correlation": -0.034332285609383326,
+          "n_parameters": 47
+        },
+        "year_and_month_of_year": {
+          "partial_rank_correlation": -0.032700643626121136,
+          "n_parameters": 37,
+          "ci95_author": [
+            -0.11859219337665547,
+            0.04139647997009835
+          ]
+        },
+        "none": {
+          "partial_rank_correlation": -0.029180883394821108,
+          "n_parameters": 24
+        }
+      }
+    }
+  }
+}

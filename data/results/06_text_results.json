@@ -1,0 +1,7 @@
+{
+  "n_cache_records": 1600,
+  "n_unique_ids": 1595,
+  "n_valid_records": 1598,
+  "extractor": "BeautifulSoup html.parser; razdel; alphabetic words including one-letter words",
+  "limitations": "syllables approximated by vowels; formulas without formula class or data-tex attribute are missed; current rather than publication text"
+}
