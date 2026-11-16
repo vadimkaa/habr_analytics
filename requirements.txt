@@ -12,4 +12,5 @@ statsmodels==0.14.5
 # Служебные: на числа не влияют (сбор данных и тесты).
 requests==2.34.2
 pytest==9.2.0
+PyYAML==6.0.3
 # Сборка docx — отдельно: requirements-docx.txt
