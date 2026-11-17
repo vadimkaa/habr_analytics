@@ -156,10 +156,17 @@ def test_article_numbers_use_decimal_point_without_grouping():
     «1.42», а не «1,42»; «46845», а не «46 845»."""
     import re
 
-    for name in ("article_template.md", "article.md"):
+    articles = ("article_template.md", "article.md", "short_article/article.md")
+    for name in articles:
         text = (ROOT / name).read_text(encoding="utf-8")
         assert not re.findall(r"\d,\d", text), f"десятичная запятая в {name}"
-        assert not re.findall(r"\d[  ]\d{3}\b", text), f"разряды через пробел в {name}"
+    docs = ("README.md", "CHANGELOG.md", "experiments/catboost/README.md")
+    names = (*articles, *docs, *(p.relative_to(ROOT) for p in (ROOT / "docs").glob("*.md")))
+    for name in names:
+        text = (ROOT / name).read_text(encoding="utf-8")
+        assert not re.findall(
+            r"(?<!\d)\d{1,3}(?:[ \u00a0\u202f\u2009\u2007]\d{3})+(?!\d)", text
+        ), f"разряды через пробел в {name}"
 
 
 def test_table_captions_follow_tables():
