@@ -30,10 +30,15 @@ def test_whitelist_denies_private_artifacts():
         "check_v2.py",
         "article.docx",
         "data/input_manifest.json.bak",
+        "short_article/article_draft.md",
+        "short_article/figures/draft.png",
     ]:
         assert bad not in rels, bad
     assert "LICENSE" in rels and "docs/audit.md" in rels
     assert "data/results/08_model_results.json" in rels
+    assert "short_article/article.md" in rels
+    assert "short_article/figures/weekend_density.png" in rels
+    assert "short_article/figures/readability.png" in rels
 
 
 def test_planted_refetched_texts_do_not_pass(tmp_path):

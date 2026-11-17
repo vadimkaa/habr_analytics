@@ -604,7 +604,7 @@ def values_holidays(R):
             "Нерабочих будней",
             "Эпизодов / недель контроля",
             "Перцентиль праздник / обычный день",
-            "Разница медиан, п. п. (95% ДИ)",
+            "Разница медиан, п.п. (95% ДИ)",
             "Вероятность превосходства",
         ],
         [lead_cells(row_label[c], hol[c]) + pct_cells(hol[c]) for c in CORPORA],
@@ -649,7 +649,7 @@ def values_holidays(R):
         if mp["window10_pct_diff_pp"] is not None:
             v["holiday_w10_" + c] = (
                 f(mp["window10_pct_diff_pp"], 1)
-                + " п. п. ("
+                + " п.п. ("
                 + p_text(mp["window10_p_iid"], threshold=0.01)
                 + ")"
             )
@@ -696,7 +696,7 @@ def values_holidays(R):
         b = next((x for x in a["holiday_blocks"] if x["block"] == name), None)
         if b is None or b.get("diff_pp") is None:
             return "—"
-        return f(b["diff_pp"], 1) + " п. п."
+        return f(b["diff_pp"], 1) + " п.п."
 
     v["block_transfer_ai"] = block_pp("Переносы")
     v["block_ny_ai"] = block_pp("Новый год")
@@ -709,9 +709,9 @@ def values_holidays(R):
     lo = min(single, key=lambda x: x["diff_pp"])
     hi = max(single, key=lambda x: x["diff_pp"])
     assert lo["diff_pp"] < 0 < hi["diff_pp"], "шаблон говорит о разбросе через ноль"
-    v["block_min_ai"] = f(lo["diff_pp"], 1) + " п. п."
+    v["block_min_ai"] = f(lo["diff_pp"], 1) + " п.п."
     v["block_min_name_ai"] = lo["block"]
-    v["block_max_ai"] = f(hi["diff_pp"], 1) + " п. п."
+    v["block_max_ai"] = f(hi["diff_pp"], 1) + " п.п."
     v["block_max_name_ai"] = hi["block"]
     return v
 
@@ -749,9 +749,9 @@ def blocks_table(a, w):
             "Блок",
             "Даты (окно зрелых статей ИИ/МЛ)",
             "Статей ИИ/МЛ",
-            "Разница медиан, п. п. ИИ/МЛ (95% ДИ)",
+            "Разница медиан, п.п. ИИ/МЛ (95% ДИ)",
             "Статей 5 хабов",
-            "Разница медиан, п. п. 5 хабов (95% ДИ)",
+            "Разница медиан, п.п. 5 хабов (95% ДИ)",
         ],
         rows,
     )
