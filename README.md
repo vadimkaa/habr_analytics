@@ -33,6 +33,7 @@ Python 3.12. Команды выполняются из корня проект�
 python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 python -m pip install -r requirements.txt
+python -m pip install -r experiments/catboost/requirements-catboost.txt
 python -m pytest                    # основной анализ и CatBoost, одна команда
 python run_analysis.py --metrics-only
 ```
@@ -72,7 +73,7 @@ python experiments/catboost/run_experiments.py all
 
 [Сокращённая статья из 12 разделов](short_article/article.md) подготовлена на основе полной версии исследования. Она использует те же архивные расчёты и иллюстрации из `figs/` и `short_article/figures/`, но номера её разделов **не совпадают** с нумерацией полной статьи `article.md`. Для методологии и воспроизводимости ориентируйтесь на полную статью и `docs/`.
 
-После `pip install -r requirements.txt` запуск `python -m pytest` включает тесты CatBoost и release contract; зависимость PyYAML теперь указана в основных requirements.
+После установки обоих наборов зависимостей запуск `python -m pytest` включает тесты CatBoost и release contract. Без CatBoost часть тестов эксперимента пропускается (`pytest.importorskip`).
 
 ## Структура проекта
 
