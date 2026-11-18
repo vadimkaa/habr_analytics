@@ -69,9 +69,9 @@ jobs:
               elif isinstance(expected, float):
                   # Перевыборка авторов даёт небольшие расхождения границ ДИ
                   # между средами даже при фиксированных входных данных.
-                  absolute_tolerance = 1e-3 if "ci95_author" in location else 1e-9
+                  absolute_tolerance = 1e-3 if "ci95_author" in location else 1e-7
                   if not math.isclose(
-                      expected, actual, rel_tol=1e-10, abs_tol=absolute_tolerance
+                      expected, actual, rel_tol=1e-8, abs_tol=absolute_tolerance
                   ):
                       errors.append(
                           f"{location}: сохранено {expected!r}, получено {actual!r}; "

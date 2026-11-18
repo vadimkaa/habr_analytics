@@ -14,6 +14,7 @@ import shutil
 import sys
 import zipfile
 from pathlib import Path
+import hashlib
 
 try:
     from docx import Document
@@ -79,7 +80,7 @@ def setup_styles(doc):
     st = doc.styles["Normal"]
     st.font.name = BODY_FONT
     st.font.size = Pt(10.5)
-    st.paragraph_format.space_after = Pt(6)
+    st.paragraph_format.space_after = Pt(5)
     st.element.rPr.rFonts.set(qn("w:eastAsia"), BODY_FONT)
     for name, size in [("Heading 1", 16), ("Heading 2", 12.5), ("Heading 3", 11)]:
         s = doc.styles[name]
@@ -160,14 +161,21 @@ INLINE = re.compile(r"(\*\*.+?\*\*|\*[^*]+?\*|`[^`]+?`)")
 LINK = re.compile(r"\[([^\]]+)\]\(([^)\s]+)\)")
 
 
+def anchor_name(url):
+    return "h_" + hashlib.sha1(url.encode("utf-8")).hexdigest()[:24]
+
+
 def add_hyperlink(par, text, url):
     """Кликабельная гиперссылка вместо сырой markdown-записи [текст](url)."""
-    r_id = par.part.relate_to(
-        url,
-        "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
-        is_external=True,
-    )
-    hl = par._p.makeelement(qn("w:hyperlink"), {qn("r:id"): r_id})
+    if url.startswith("#"):
+        hl = par._p.makeelement(qn("w:hyperlink"), {qn("w:anchor"): anchor_name(url)})
+    else:
+        r_id = par.part.relate_to(
+            url,
+            "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+            is_external=True,
+        )
+        hl = par._p.makeelement(qn("w:hyperlink"), {qn("r:id"): r_id})
     r = par._p.makeelement(qn("w:r"), {})
     rPr = par._p.makeelement(qn("w:rPr"), {})
     color = par._p.makeelement(qn("w:color"), {qn("w:val"): "4F81BD"})
@@ -238,6 +246,7 @@ def add_image(doc, alt, path, base):
     width = IMG_WIDTH
     doc.add_picture(str(full), width=width)
     doc.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
+    doc.paragraphs[-1].paragraph_format.keep_with_next = True
     # Подписи к рисункам идут в article.md отдельной курсивной строкой
     # («*Рисунок N. …*»): на Хабре alt-текст под картинкой не показывается.
     # Поэтому alt здесь в подпись не превращается.
@@ -268,7 +277,19 @@ def add_table(doc, rows):
             add_runs(cell.paragraphs[0], text, base_size=size)
     set_col_widths(tbl)
     fix_table(tbl)
-    doc.add_paragraph()
+    # Последняя строка остаётся рядом с подписью таблицы.
+    for cell in tbl.rows[-1].cells:
+        for par in cell.paragraphs:
+            par.paragraph_format.keep_with_next = True
+
+
+def add_heading(doc, text, style, index):
+    par = doc.add_paragraph(text, style=style)
+    slug = "#" + re.sub(r"[^\w\- ]", "", text.lower()).replace(" ", "-")
+    bookmark = par._p.makeelement(qn("w:bookmarkStart"), {qn("w:id"): str(index), qn("w:name"): anchor_name(slug)})
+    par._p.insert(1, bookmark)
+    par._p.append(par._p.makeelement(qn("w:bookmarkEnd"), {qn("w:id"): str(index)}))
+    return par
 
 
 def md_to_docx(md_path, out_path):
@@ -280,6 +301,11 @@ def md_to_docx(md_path, out_path):
     sec = doc.sections[0]
     sec.left_margin = sec.right_margin = Cm(2)
     sec.top_margin = sec.bottom_margin = Cm(1.79)
+    footer = sec.footer.paragraphs[0]
+    footer.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    footer.add_run("Полная версия исследования • ").font.size = Pt(9)
+    field = footer._p.makeelement(qn("w:fldSimple"), {qn("w:instr"): "PAGE"})
+    footer._p.append(field)
     i = 0
     in_spoiler = False
     while i < len(lines):
@@ -322,10 +348,12 @@ def md_to_docx(md_path, out_path):
         elif re.fullmatch(r"<anchor>[a-zA-Z0-9_-]+</anchor>", stripped):
             # В Habr Flavored Markdown якорь не является видимым текстом.
             pass
+        elif stripped.startswith("#### "):
+            add_heading(doc, stripped[5:], "Heading 3", i)
         elif stripped.startswith("### "):
-            doc.add_paragraph(stripped[4:], style="Heading 2")
+            add_heading(doc, stripped[4:], "Heading 2", i)
         elif stripped.startswith("## "):
-            doc.add_paragraph(stripped[3:], style="Heading 1")
+            add_heading(doc, stripped[3:], "Heading 1", i)
         elif stripped.startswith("!["):
             m = re.match(r"!\[(.*?)\]\((.*?)\)", stripped)
             if m:

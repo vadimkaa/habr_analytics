@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import platform
 import subprocess
@@ -53,11 +54,18 @@ def main():
         "14_extra_checks.py",
         "15_ml_figures.py",
         "16_review_robustness.py",
+        "17_final_sensitivity.py",
+        "18_sensitivity_figures.py",
         "10_build_article.py",
     ]
     for step in steps:
         print(f">>> {step}", flush=True)
-        subprocess.run([sys.executable, str(ROOT / step)], cwd=ROOT, check=True)
+        command = [sys.executable, str(ROOT / step)]
+        env = None
+        if step == "17_final_sensitivity.py":
+            command.append("--check")
+            env = {**os.environ, "OPENBLAS_NUM_THREADS": "1", "OMP_NUM_THREADS": "1"}
+        subprocess.run(command, cwd=ROOT, check=True, env=env)
     # тесты методики — часть прогона: пересчёт, прошедший тесты, фиксируется целиком
     print(">>> pytest -q", flush=True)
     subprocess.run([sys.executable, "-m", "pytest", "-q"], cwd=ROOT, check=True)

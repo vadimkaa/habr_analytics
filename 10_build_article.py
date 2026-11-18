@@ -25,6 +25,7 @@ import numpy as np
 import pandas as pd
 
 from habrpub import BASE, DATA, RESULTS
+from habrpub.sensitivity_public import values_sensitivity
 
 LABELS = {"ai": "ИИ/МЛ", "wide": "Пять хабов"}
 CORPORA = ("ai", "wide")
@@ -1080,6 +1081,7 @@ def main():
         values_readability,
         values_model,
         values_review_robustness,
+        lambda R: values_sensitivity(R, f, interval, table),
     ):
         part = build(R)
         clash = vals.keys() & part.keys()
