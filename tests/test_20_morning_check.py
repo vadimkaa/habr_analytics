@@ -14,3 +14,6 @@ def test_morning_check():
     v = mod.publication_values()
     short = (ROOT / "short_article/article.md").read_text(encoding="utf-8")
     assert v["am_ai_ratio_ci"] in short
+    for corpus in ("ai", "wide"):
+        share = 100 * data["weekend_not_above_weekday_median"][corpus]
+        assert f"{share:.1f}%" in short
