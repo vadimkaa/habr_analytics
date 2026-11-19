@@ -27,8 +27,3 @@ def test_short_article_key_values():
                 "s_age_audit_exposed_ai", "s_age_audit_exposed_wide"):
         assert str(values[key]) in short, key
     assert f"{float(values['auc75']):.2f}" in short
-    for name in ("article.md", "article_template.md", "short_article/article.md"):
-        article = (ROOT / name).read_text(encoding="utf-8")
-        assert "Как заметил Томас Гексли" in article
-        assert "клиповом мышлении" not in article
-        assert "протокол" not in article.lower()

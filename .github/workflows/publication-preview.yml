@@ -2,11 +2,13 @@ name: Publication preview
 
 on:
   push:
-    branches: [editorial-final-review]
+    branches: [main, editorial-v1.1.1]
     paths:
       - '**.py'
       - '**.md'
       - '.github/workflows/publication-preview.yml'
+
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -20,6 +22,9 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install -r requirements.txt -r requirements-docx.txt
+      - name: Morning-hour diagnostic (editorial branch only)
+        if: github.ref == 'refs/heads/editorial-v1.1.1'
+        run: python 20_morning_check.py
       - name: Regenerate revised figures
         run: |
           python 02_explore_ai_12m.py
@@ -45,15 +50,3 @@ jobs:
             figs/02_hour.png
             figs/13_weekend_robustness.png
             short_article/figures/weekend_density.png
-      - name: Export revised public PNGs for review
-        run: |
-          python - <<'PY'
-          import base64
-          from pathlib import Path
-          for name in ("figs/02_hour.png", "figs/13_weekend_robustness.png", "short_article/figures/weekend_density.png"):
-              print("FIGURE_BEGIN " + name)
-              data = base64.b64encode(Path(name).read_bytes()).decode("ascii")
-              for i in range(0, len(data), 2048):
-                  print("FIGURE_DATA " + data[i:i+2048])
-              print("FIGURE_END " + name)
-          PY
