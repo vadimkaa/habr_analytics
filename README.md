@@ -25,6 +25,8 @@
 описаны в [разделе 13 статьи](article.md) и
 [документации о новом сборе](docs/collection.md).
 
+**English:** Reproducible observational study of publication timing, author differences and text features on Habr (46,845 unique articles). Code, frozen metadata and statistical checks accompany the Russian article.
+
 ## Быстрый старт
 
 Python 3.12. Команды выполняются из корня проекта:
@@ -66,7 +68,7 @@ python experiments/catboost/run_experiments.py all
 (в конфигурации задано 2 потока). Проверенное универсальное время запуска
 отсутствует: оно зависит от оборудования и версии библиотек. Для оценки
 в своём окружении можно использовать команду `time` перед запуском `all`.
-Результаты разделов 9–10 воспроизводятся по протоколу в
+Порядок воспроизведения результатов разделов 9–10 описан в
 `experiments/catboost/README.md`.
 
 ## Сокращённая версия для Хабра

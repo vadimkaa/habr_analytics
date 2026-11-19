@@ -56,6 +56,7 @@ def main():
         "16_review_robustness.py",
         "17_final_sensitivity.py",
         "18_sensitivity_figures.py",
+        "19_editorial_checks.py",
         "10_build_article.py",
     ]
     for step in steps:

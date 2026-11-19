@@ -1088,6 +1088,7 @@ def main():
         assert not clash, f"заполнители заданы дважды: {sorted(clash)}"
         vals.update(part)
 
+    vals.update(json.loads((RESULTS / "19_editorial_checks.json").read_text(encoding="utf-8")))
     template = (BASE / "article_template.md").read_text()
     used = set(re.findall(r"\{\{(\w+)\}\}", template))
     missing = used - vals.keys()
