@@ -2,7 +2,7 @@
 
 Код этого репозитория распространяется по лицензии MIT (файл `LICENSE`).
 
-Собственные производные материалы — метаданные корпусов, лексические метрики, результаты в `data/results/` и `experiments/catboost/results/`, таблицы, графики в `figs/` и текст статьи (`article.md`, `article_template.md`) — распространяются по лицензии Creative Commons Attribution 4.0 International (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/legalcode.ru
+Собственные производные материалы — метаданные корпусов, лексические метрики, результаты в `data/results/` и `experiments/catboost/results/`, таблицы, графики в `figs/` и тексты статей (`article.md`, `article_template.md`, `short_article/article.md`) — распространяются по лицензии Creative Commons Attribution 4.0 International (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/legalcode.ru
 
 При повторном использовании достаточно указать автора (vadimkaa) и дать ссылку на репозиторий https://github.com/vadimkaa/habr_analytics.
 
