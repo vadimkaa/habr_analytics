@@ -11,11 +11,10 @@ def test_editorial_checks():
     mod.validate(mod.compute(), mod.frozen())
     values = mod.publication_values()
     short = (ROOT / "short_article/article.md").read_text(encoding="utf-8")
-    ai = f"{values['ed_ai_wd_eve']} против {values['ed_ai_wd_day']} в ИИ/МЛ"
-    wide = f"{values['ed_wide_wd_eve']} против {values['ed_wide_wd_day']} в пяти хабах"
-    weekend = (f"({values['ed_ai_we_eve']} против {values['ed_ai_we_day']} и "
-               f"{values['ed_wide_we_eve']} против {values['ed_wide_we_day']})")
-    assert ai in short and wide in short and weekend in short
+    for label, suffix in (("Будни, день", "wd_day"), ("Будни, вечер", "wd_eve"),
+                          ("Выходные, день", "we_day"), ("Выходные, вечер", "we_eve")):
+        row = f"| {label} | {values['ed_ai_' + suffix]} | {values['ed_wide_' + suffix]} |"
+        assert row in short, row
     assert f"VPD {values['ed_ai_8_vpd']} на {values['ed_ai_8_n']} статьях ИИ/МЛ" in short
     assert f"({values['ed_ai_union_rho']} и {values['ed_wide_union_rho']})" in short
 
@@ -34,7 +33,7 @@ def test_short_article_key_values():
         f"в медиане в {values['ml_overpred_ai']} и {values['ml_overpred_wide']} раза",
         f"составили {values['s_fe_ai']} и {values['s_fe_wide']} (ДИ",
         f"{values['s_age_final_train_ai']} и {values['s_age_audit_exposed_ai']} дней в ИИ/МЛ, "
-        f"{values['s_age_final_train_wide']} и {values['s_age_audit_exposed_wide']} в пяти хабах",
+        f"{values['s_age_final_train_wide']} и {values['s_age_audit_exposed_wide']} — в пяти хабах",
         f"AUC = {float(values['auc75']):.2f};",
     )
     for fragment in expected:
