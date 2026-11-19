@@ -46,7 +46,7 @@ def main():
         for ax, vals in zip(axs, (top, bottom)):
             for k, (v, ci) in enumerate(vals):
                 error(ax, v, len(vals) - 1 - k + (0.12 if i == 0 else -0.12), ci, COLORS[i], label=LABELS[c] if k == 0 else None)
-    for ax, names, title, lab in zip(axs, (upper, lower), ('А. Описательные отношения VPD', 'Б. Условные отношения просмотров + 1'), ('Отношение медиан VPD (*медиана внутриавторских отношений)', 'Отношение геометрических средних (лог-регрессия)')):
+    for ax, names, title, lab in zip(axs, (upper, lower), ('А. Описательные отношения VPD', 'Б. Регрессии с поправками'), ('Отношение медиан VPD (*медиана внутриавторских отношений)', 'Отношение геометрических средних (просмотры + 1)')):
         ax.set(yticks=list(range(len(names) - 1, -1, -1)), yticklabels=names, xlabel=lab, title=title, xlim=(0.9, 1.8), ylim=(-0.55, len(names) - 0.5))
         ax.axvline(1, color='#666666', ls='--', lw=1)
         ax.legend(loc='upper right', frameon=False, ncol=2, fontsize=9)
@@ -127,5 +127,36 @@ def main():
         ax.legend(frameon=False, fontsize=8)
     axs[0].set_ylabel('Статей в каждой группе')
     save(fig, '19_power.png')
+    short_density()
+
+def short_density():
+    """Short article density plot: data points, author CIs and weekend counts."""
+    res = json.loads((RESULTS / 'part4_results.json').read_text(encoding='utf-8'))
+    fig, ax = plt.subplots(figsize=(8.6, 4.5), layout='constrained')
+    for i, c in enumerate(CORPORA):
+        rows = res[c]['quintiles']
+        xs = [row['q'] + (-0.15 if i == 0 else 0.15) for row in rows]
+        for k, (x, row) in enumerate(zip(xs, rows)):
+            y = row['ratio']
+            lo, hi = row['ci95_author']
+            ax.errorbar(x, y, yerr=[[max(y - lo, 0)], [max(hi - y, 0)]],
+                        fmt='o', ms=6, capsize=4, lw=1.4, color=COLORS[i],
+                        label=LABELS[c] if k == 0 else None)
+            ax.annotate(f"n={row['n_weekend']}", (x, hi), xytext=(0, 5),
+                        textcoords='offset points', ha='center', fontsize=8,
+                        color=COLORS[i])
+    ax.axhline(1, color='#777777', ls='--', lw=1)
+    ax.grid(axis='x', visible=False)
+    ax.set(xticks=range(1, 6), xlim=(0.55, 5.45), ylim=(0.45, 4.8),
+           xlabel='Группа плотности: 1 — самая редкая, 5 — самая плотная',
+           ylabel='Отношение медиан VPD\nвыходных к будням',
+           title='Выходные против будней при сходной плотности')
+    ax.legend(loc='upper left', frameon=False, ncol=2)
+    ax.text(0.99, 0.98, 'n — число выходных статей', transform=ax.transAxes,
+            ha='right', va='top', fontsize=8, color='#555555')
+    fig.savefig(BASE / 'short_article/figures/weekend_density.png',
+                dpi=180, bbox_inches='tight', facecolor='white')
+    plt.close(fig)
+
 if __name__ == '__main__':
     main()

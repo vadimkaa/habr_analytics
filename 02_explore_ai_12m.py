@@ -74,6 +74,8 @@ def main():
         ax.bar(group.index, group.vpd, color="#2d7ab3")
         if name.startswith("01"):
             ax.set_xticks(range(7), ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"])
+        else:
+            ax.set_xticks([*range(0, 24, 2), 23])
         ax.set(
             xlabel=label,
             ylabel="VPD, медиана",

@@ -303,7 +303,8 @@ def md_to_docx(md_path, out_path):
     sec.top_margin = sec.bottom_margin = Cm(1.79)
     footer = sec.footer.paragraphs[0]
     footer.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    footer.add_run("Полная версия исследования • ").font.size = Pt(9)
+    footer_label = "Сокращённая версия исследования" if md_path.parent.name == "short_article" else "Полная версия исследования"
+    footer.add_run(footer_label + " • ").font.size = Pt(9)
     field = footer._p.makeelement(qn("w:fldSimple"), {qn("w:instr"): "PAGE"})
     footer._p.append(field)
     i = 0
@@ -354,6 +355,11 @@ def md_to_docx(md_path, out_path):
             add_heading(doc, stripped[4:], "Heading 2", i)
         elif stripped.startswith("## "):
             add_heading(doc, stripped[3:], "Heading 1", i)
+        elif stripped.startswith("<img "):
+            src = re.search(r'src="([^"]+)"', stripped)
+            alt = re.search(r'alt="([^"]*)"', stripped)
+            if src:
+                add_image(doc, alt.group(1) if alt else "", src.group(1), base)
         elif stripped.startswith("!["):
             m = re.match(r"!\[(.*?)\]\((.*?)\)", stripped)
             if m:

@@ -1,0 +1,59 @@
+name: Publication preview
+
+on:
+  push:
+    branches: [editorial-final-review]
+    paths:
+      - '**.py'
+      - '**.md'
+      - '.github/workflows/publication-preview.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt -r requirements-docx.txt
+      - name: Regenerate revised figures
+        run: |
+          python 02_explore_ai_12m.py
+          python 18_sensitivity_figures.py
+      - name: Build Word preview
+        run: python 13_build_docx.py short_article/article.md Habr_short_publication.docx
+      - name: Validate illustration count
+        run: |
+          python - <<'PY'
+          from docx import Document
+          from pathlib import Path
+          doc = Document("Habr_short_publication.docx")
+          assert len(doc.inline_shapes) == 7
+          for path in ("figs/02_hour.png", "figs/13_weekend_robustness.png", "short_article/figures/weekend_density.png"):
+              assert Path(path).stat().st_size > 1000
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: publication-preview
+          path: |
+            Habr_short_publication.docx
+            short_article/article.md
+            figs/02_hour.png
+            figs/13_weekend_robustness.png
+            short_article/figures/weekend_density.png
+      - name: Export revised public PNGs for review
+        run: |
+          python - <<'PY'
+          import base64
+          from pathlib import Path
+          for name in ("figs/02_hour.png", "figs/13_weekend_robustness.png", "short_article/figures/weekend_density.png"):
+              print("FIGURE_BEGIN " + name)
+              data = base64.b64encode(Path(name).read_bytes()).decode("ascii")
+              for i in range(0, len(data), 2048):
+                  print("FIGURE_DATA " + data[i:i+2048])
+              print("FIGURE_END " + name)
+          PY
